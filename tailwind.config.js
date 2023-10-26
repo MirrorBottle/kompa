@@ -14,7 +14,7 @@ export default {
     ],
     daisyui: {
         themes: ["light", {
-            hazzy: {
+            kompa: {
             "primary": "#19263f",
             "secondary": "#283c63",
             "accent": "#1970C3",
