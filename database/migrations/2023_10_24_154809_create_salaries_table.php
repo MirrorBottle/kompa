@@ -16,12 +16,14 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('user_id');
-            $table->bigInteger('salary_amount');
+            $table->bigInteger('base_salary');
+            $table->integer('commission_rate');
             $table->bigInteger('commission_amount');
             $table->enum('status', [
                 1, 2, 3, 4, 5
             ])->comment('1 = Draft, 2 = Manager Approved, 3 = Finance Pending, 4 = Finance Approved, 5 = Finance Rejected');
-            $table->text('note');
+            $table->text('manager_note')->nullable();
+            $table->text('finance_note')->nullable();
             $table->date('start_date');
             $table->date('end_date');
             $table->date('approval_date');
