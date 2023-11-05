@@ -14,7 +14,7 @@
                     </svg>
                 </button>
                 <a href="#" class="flex ml-2 md:mr-24">
-                    <img class="h-[40px]" src="{{ asset('assets/images/logo_full.png') }}" alt="Hazzy Logo">
+                    <img class="h-[40px]" src="{{ asset('assets/images/logo_full.png') }}" alt="Kompa Logo">
                 </a>
             </div>
             <div class="flex items-center">
@@ -42,22 +42,17 @@
                             <li>
                                 <a href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                    role="menuitem">Dashboard</a>
+                                    role="menuitem">Profil</a>
                             </li>
                             <li>
                                 <a href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                    role="menuitem">Settings</a>
+                                    role="menuitem">Perusahaan</a>
                             </li>
                             <li>
-                                <a href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                    role="menuitem">Earnings</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                                    role="menuitem">Sign out</a>
+                                <a href="/logout"
+                                    class="block px-4 py-2 text-sm text-error hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">Keluar</a>
                             </li>
                         </ul>
                     </div>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', [
-                1, 2, 3, 4
+                1, 2, 3, 4, 5
             ])->comment('1 = Master, 2 = Admin, 3 = Finance, 4 = Manager, 5 = Pegawai');
             $table->bigInteger('base_salary')->default(0);
             $table->rememberToken();

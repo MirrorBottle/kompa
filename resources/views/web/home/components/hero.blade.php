@@ -3,7 +3,7 @@
         <div class="mx-auto w-full max-w-7xl">
             <div class="py-16 md:py-24 lg:py-32">
                 <div class="mx-auto max-w-3xl text-center">
-                    <h1 class="mb-6 font-extrabold text-white text-4xl md:text-6xl pb-4"><span class="text-accent">HIRAC</span> yang Keren, <br>Bukan yang Ribet, <span class="text-accent">Hazzy.</span></h1>
+                    <h1 class="mb-6 font-extrabold text-white text-4xl md:text-6xl pb-4"><span class="text-accent">HIRAC</span> yang Keren, <br>Bukan yang Ribet, <span class="text-accent">Kompa.</span></h1>
                     <div class="mx-auto max-w-[528px] mb-5 md:mb-6 lg:mb-8">
                         <p class="text-xl text-[#e6e6e6]">Membuat manajemen risiko jadi sederhana, cepat, dan efisien. Tanpa ribet!</p>
                     </div>

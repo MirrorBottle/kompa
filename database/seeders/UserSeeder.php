@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         // * MASTER
         User::factory()->create([
             'name'  => 'Master',
-            'email' => 'master@hazzy.id',
+            'email' => 'master@kompa.id',
             'role'  => 1
         ]);
         // * ADMIN
@@ -30,10 +30,17 @@ class UserSeeder extends Seeder
             'email' => 'admin2@gmail.com',
             'role'  => 2
         ]);
-        // * PJO
-        User::factory()->count(2)->create([
+
+        // * FINANCE
+        User::factory()->count(1)->create([
             'role' => 3
         ]);
+
+        // * MANAGER
+        User::factory()->count(1)->create([
+            'role' => 4
+        ]);
+
         // * USER
         User::factory()->count(12)->create([
             'role' => 4

@@ -1,4 +1,4 @@
-@extends('web.layouts.index')
+@extends('layouts.web.index')
 @section('title', 'Home')
 @section('content')
 

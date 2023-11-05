@@ -3,8 +3,8 @@
         <div class="mx-auto w-full max-w-7xl">
             <div class="flex-col flex gap-y-20 max-[479px]:gap-[60px] items-center lg:items-center py-20 lg:py-24">
                 <div class="flex-col flex items-center gap-y-[16px] sm:gap-y-4">
-                    <h2 class="text-center font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white">Fitur <span class="text-accent">Hazzy</span> yang Bikin <br>Kamu Bilang <span class="text-accent">'Wow'!</span></h2>
-                    <p class="text-center text-[#e6e6e6] text-base sm:text-base">Kami punya serangkaian fitur keren di Hazzy yang bisa bikin manajemen risiko jadi lebih mudah. <br>Ayo, kita intip lebih dalam!
+                    <h2 class="text-center font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white">Fitur <span class="text-accent">Kompa</span> yang Bikin <br>Kamu Bilang <span class="text-accent">'Wow'!</span></h2>
+                    <p class="text-center text-[#e6e6e6] text-base sm:text-base">Kami punya serangkaian fitur keren di Kompa yang bisa bikin manajemen risiko jadi lebih mudah. <br>Ayo, kita intip lebih dalam!
                     </p>
                 </div>
                 <div class="flex-col flex items-start gap-y-20">

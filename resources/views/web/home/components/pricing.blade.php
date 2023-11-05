@@ -6,7 +6,7 @@
                     <div class="mx-auto max-w-3xl text-center mb-8 md:mb-12 lg:mb-16">
                         <h2 class="mb-4 mt-6 font-extrabold text-3xl md:text-5xl"><span class="text-accent">Pricing</span> yang Gak Bikin <span class="text-accent">Pusing!</span></h2>
                         <div class="mx-auto mt-4 max-w-[528px]">
-                            <p class="text-[#e6e6e6]">Hazzy punya satu rencana harga aja, tapi itu udah bikin kamu bisa akses semua fitur keren. Yuk, langsung cek harganya dan mulai manajemen risikomu!</p>
+                            <p class="text-[#e6e6e6]">Kompa punya satu rencana harga aja, tapi itu udah bikin kamu bisa akses semua fitur keren. Yuk, langsung cek harganya dan mulai manajemen risikomu!</p>
                         </div>
                     </div>
                     <div
@@ -14,7 +14,7 @@
                         <div
                             class="grid h-full gap-[16px] border border-solid border-secondary px-10 py-14 rounded-xl grid-cols-1 sm:grid-cols-2">
                             @php
-                                $pricingFeatures = ['Semua Fitur Hazzy', 'Support 24/7', 'Update Berkala', 'Pelatihan Online', 'Backup Data', 'Kustomisasi Laporan'];
+                                $pricingFeatures = ['Semua Fitur Kompa', 'Support 24/7', 'Update Berkala', 'Pelatihan Online', 'Backup Data', 'Kustomisasi Laporan'];
                             @endphp
                             @foreach ($pricingFeatures as $pricingFeature)
                             <div class="flex flex-row items-center text-left">

@@ -23,9 +23,9 @@
                 </div>
                 <div
                     class="flex w-auto flex-none justify-start max-[991px]:mb-4 max-[991px]:ml-10 max-[991px]:mt-3 max-[767px]:ml-5 lg:w-50 lg:justify-end">
-                    <a href="/login"
-                        class="inline-block cursor-pointer rounded-lg border border-solid border-accent bg-accent px-5 py-3 mr-2 text-center font-bold text-white transition hover:border-secondary hover:bg-secondary">Daftar</a>
                     <a href="/register"
+                        class="inline-block cursor-pointer rounded-lg border border-solid border-accent bg-accent px-5 py-3 mr-2 text-center font-bold text-white transition hover:border-secondary hover:bg-secondary">Daftar</a>
+                    <a href="/login"
                         class="inline-block cursor-pointer rounded-lg border border-solid border-white bg-white px-5 py-3 text-center font-bold text-secondary transition hover:border-[#e6e6e6] hover:bg-[#e6e6e6]">Masuk</a>
                 </div>
             </nav>

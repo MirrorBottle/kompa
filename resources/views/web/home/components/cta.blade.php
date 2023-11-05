@@ -12,7 +12,7 @@
                             <div
                                 class="mx-auto mb-6 flex max-w-[640px] grid-cols-[1.25fr_1fr_1fr] flex-nowrap items-center justify-center gap-0 max-[479px]:flex-col sm:items-center md:mb-10 lg:mb-12">
                                 @php
-                                    $trialFeatures = ['Semua Fitur Hazzy', '30 Hari Trial', 'Bisa Langsung Upgrade'];
+                                    $trialFeatures = ['Semua Fitur Kompa', '30 Hari Trial', 'Bisa Langsung Upgrade'];
                                 @endphp
                                 @foreach ($trialFeatures as $trialFeature)
                                     <div class="ml-2 mr-2 flex flex-row items-center max-[479px]:mt-2 md:ml-4 md:mr-4">

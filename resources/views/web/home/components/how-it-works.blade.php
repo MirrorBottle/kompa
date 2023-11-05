@@ -6,10 +6,10 @@
             <div class="py-16 md:py-24 lg:py-32">
                 <div class="mx-auto max-w-3xl text-center">
                     <p class="text-sm font-bold uppercase text-accent">3 Langkah Mudah</p>
-                    <h2 class="mb-4 mt-6 font-extrabold text-white text-3xl md:text-5xl">Jadi, Bagaimana <span class="text-accent">Hazzy</span> Bekerja?
+                    <h2 class="mb-4 mt-6 font-extrabold text-white text-3xl md:text-5xl">Jadi, Bagaimana <span class="text-accent">Kompa</span> Bekerja?
                     </h2>
                     <div class="mx-auto mt-4 max-w-[528px] mb-8 md:mb-12 lg:mb-16">
-                        <p class="text-[#e6e6e6]">Pakai Hazzy itu simpel banget, cuma ada tiga langkah aja. Yuk, kita
+                        <p class="text-[#e6e6e6]">Pakai Kompa itu simpel banget, cuma ada tiga langkah aja. Yuk, kita
                             lihat caranya</p>
                     </div>
                 </div>

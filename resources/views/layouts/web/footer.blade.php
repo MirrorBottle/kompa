@@ -16,10 +16,10 @@
                             </p>
                         </div>
                         <div class="mb-4 flex max-w-[272px] items-start justify-start">
-                            <p class="text-white"><i class="fa-solid fa-envelope mr-2"></i> support@hazzy.id</p>
+                            <p class="text-white"><i class="fa-solid fa-envelope mr-2"></i> support@kompa.id</p>
                         </div>
                         <div class="mb-4 flex max-w-[272px] items-start justify-start">
-                            <p class="text-white"><i class="fa-brands fa-instagram mr-2"></i> hazzy.id</p>
+                            <p class="text-white"><i class="fa-brands fa-instagram mr-2"></i> kompa.id</p>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                             class="inline-block font-normal text-white transition hover:text-white sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pl-0 pr-6">Bantuan</a>
                     </div>
                     <div class="max-[991px]:flex-none">
-                        <p class="text-white">© Copyright {{ date('Y') }}. Hazzy.id</p>
+                        <p class="text-white">© Copyright {{ date('Y') }}. Kompa.id</p>
                     </div>
                 </div>
             </div>

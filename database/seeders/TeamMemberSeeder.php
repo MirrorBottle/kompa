@@ -17,7 +17,6 @@ class TeamMemberSeeder extends Seeder
             TeamMember::insert([
                 'team_id' => 1,
                 'user_id' => $user_id,
-                'is_team_leader' => $user_id == 6
             ]);
         }
 
@@ -25,7 +24,6 @@ class TeamMemberSeeder extends Seeder
             TeamMember::insert([
                 'team_id' => 2,
                 'user_id' => $user_id,
-                'is_team_leader' => $user_id == 9
             ]);
         }
 
@@ -33,7 +31,6 @@ class TeamMemberSeeder extends Seeder
             TeamMember::insert([
                 'team_id' => 3,
                 'user_id' => $user_id,
-                'is_team_leader' => $user_id == 12
             ]);
         }
 
@@ -41,7 +38,6 @@ class TeamMemberSeeder extends Seeder
             TeamMember::insert([
                 'team_id' => 4,
                 'user_id' => $user_id,
-                'is_team_leader' => $user_id == 15
             ]);
         }
     }

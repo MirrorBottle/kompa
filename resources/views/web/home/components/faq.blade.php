@@ -8,7 +8,7 @@
                         <div class="mb-8 max-w-3xl md:mb-12 lg:mb-16">
                             <h2 class="text-3xl font-extrabold md:text-5xl text-white">FAQs</h2>
                             <div class="ml-0 mr-0 mt-4 max-w-[528px]">
-                                <p class="text-[#e6e6e6]">Temukan jawaban atas pertanyaan yang sering diajukan tentang Hazzy di bawah ini.</p>
+                                <p class="text-[#e6e6e6]">Temukan jawaban atas pertanyaan yang sering diajukan tentang Kompa di bawah ini.</p>
                             </div>
                         </div>
                         <div class="mb-6 md:h-[280px] w-full flex-none overflow-hidden rounded-xl bg-primary p-8">
@@ -31,13 +31,13 @@
                     <div class="flex-[1_1_500px] max-[991px]:w-full max-[991px]:flex-none">
                         <div class="mb-6 w-full overflow-hidden rounded-xl border border-accent bg-accent p-8">
                             <div class="flex cursor-pointer items-start justify-between">
-                                <div class="text-xl font-bold text-white">Apa Itu Hazzy?</div>
+                                <div class="text-xl font-bold text-white">Apa Itu Kompa?</div>
                                 <div class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center">
                                     <div class="h-0.5 w-5 bg-white"></div>
                                 </div>
                             </div>
                             <div class="mb-4 w-full max-w-[640px] overflow-hidden lg:max-w-[960px]">
-                                <p class="text-[#e6e6e6]">Hazzy adalah perangkat lunak yang dirancang untuk memudahkan manajemen risiko dan keamanan di industri pertambangan. Ini membantu dalam membuat laporan HIRAC, memantau risiko secara real-time, dan banyak lagi.</p>
+                                <p class="text-[#e6e6e6]">Kompa adalah perangkat lunak yang dirancang untuk memudahkan manajemen risiko dan keamanan di industri pertambangan. Ini membantu dalam membuat laporan HIRAC, memantau risiko secara real-time, dan banyak lagi.</p>
                             </div>
                         </div>
                         <div class="mb-6 w-full overflow-hidden rounded-xl border border-secondary bg-secondary p-8">

@@ -3,9 +3,9 @@
         <div class="mx-auto w-full max-w-7xl">
             <div class="py-16 md:py-24 lg:py-32">
                 <div class="mx-auto max-w-3xl text-center">
-                    <h2 class="mb-4 mt-6 font-extrabold text-white text-3xl md:text-5xl">Yuk, kenalan lebih dekat dengan <span class="text-accent">Hazzy</span></h2>
+                    <h2 class="mb-4 mt-6 font-extrabold text-white text-3xl md:text-5xl">Yuk, kenalan lebih dekat dengan <span class="text-accent">Kompa</span></h2>
                     <div class="mx-auto mt-4 max-w-[528px] mb-8 md:mb-12 lg:mb-16">
-                        <p class="text-[#e6e6e6]">Hazzy membantu Anda mengelola data risiko di pertambangan dengan cara yang seru dan efisien. Yuk, cari tahu lebih lanjut</p>
+                        <p class="text-[#e6e6e6]">Kompa membantu Anda mengelola data risiko di pertambangan dengan cara yang seru dan efisien. Yuk, cari tahu lebih lanjut</p>
                     </div>
                 </div>
                 <div class="mx-auto flex max-w-[960px] flex-col items-center justify-center px-16 py-8">
