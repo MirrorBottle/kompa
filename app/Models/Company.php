@@ -25,4 +25,12 @@ class Company extends Model
         return $this->hasMany(Team::class, 'company_id');
     }
 
+    public function customers() {
+        return $this->hasMany(Customer::class, 'company_id');
+    }
+
+    public function sales() {
+        return $this->hasMany(Sales::class, 'company_id');
+    }
+
 }

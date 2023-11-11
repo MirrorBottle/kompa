@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Salary extends Model
 {
     use HasFactory;
+
+    public function sales() {
+        return $this->hasMany(Sales::class, 'salary_id');
+    }
 }

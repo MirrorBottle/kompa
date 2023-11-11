@@ -7,19 +7,19 @@
     </div>
     <div>
         <label for="code" class="form-label">Singkatan</label>
-        <input type="text" name="singkatan" id="singkatan" class="form-input" value="{{ isset($data) ? $data->code : '' }}" required>
+        <input type="text" name="abbreviation" id="abbreviation" class="form-input" value="{{ isset($data) ? $data->abbreviation : '' }}" required>
     </div>
     <div>
         <label for="name" class="form-label">Nomor HP</label>
-        <input type="text" name="noHP" id="noHP" class="form-input" value="{{ isset($data) ? $data->name : '' }}" required>
+        <input type="text" name="phone_number" id="phone_number" class="form-input" value="{{ isset($data) ? $data->phone_number : '' }}" required>
     </div>
     <div>
         <label for="code" class="form-label">Email</label>
-        <input type="email" name="email" id="email" class="form-input" value="{{ isset($data) ? $data->code : '' }}" required>
+        <input type="email" name="email" id="email" class="form-input" value="{{ isset($data) ? $data->email : '' }}" required>
     </div>
     <div>
         <label for="code" class="form-label">Alamat</label>
-        <input type="email" name="alamat" id="alamat" class="form-input" value="{{ isset($data) ? $data->code : '' }}" required>
+        <input type="text" name="address" id="address" class="form-input" value="{{ isset($data) ? $data->address : '' }}" required>
     </div>
 </div>
 <div class="flex justify-between mt-5">

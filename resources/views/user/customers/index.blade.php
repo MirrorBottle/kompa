@@ -6,6 +6,7 @@
     <div id="main-content"
         class="relative w-full max-w-screen-2xl mx-auto h-full overflow-y-auto bg-gray-100 px-5">
         <main>
+
             <div class="px-4 pt-6 2xl:px-0 " >
                 <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
                     <div class="flex flex-row md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
@@ -29,7 +30,7 @@
                         </div>
                         <div
                             class="w-full md:w-auto flex flex-row md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0 ">
-                            <a href=""
+                            <a href="{{route('user.customers.create')}}"
                                 class="  flex items-center justify-center text-white bg-secondary hover:bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary focus:outline-none dark:focus:ring-primary">
                                 <i class="fa-solid fa-plus mr-2"></i>
                                 Tambah Customer
@@ -92,7 +93,7 @@
                                             {{ $csm->address}}
                                         </td>
                                         <td class="px-4 py-3 flex items-center justify-end">
-                                            <button id="" data-dropdown-toggle=""
+                                            <button id="{{ $csm->id }}-button" data-dropdown-toggle="{{ $csm->id }}"
                                                 data-dropdown-placement="top"
                                                 class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
                                                 type="button">
@@ -102,17 +103,17 @@
                                                         d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                                 </svg>
                                             </button>
-                                            <div id=""
+                                            <div id="{{ $csm->id }}"
                                                 class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                                                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
                                                     aria-labelledby="">
                                                     <li>
-                                                        <a href=""
+                                                        <a href="{{ route('user.customers.edit', $csm->id) }}"
                                                             class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ubah</a>
                                                     </li>
                                                 </ul>
                                                 <div class="py-1">
-                                                    <form action="" method="post">
+                                                    <form action="{{route('user.customers.destroy', $csm->id)}}" method="post">
                                                         @method('DELETE')
                                                         @csrf
                                                         <button type="submit"

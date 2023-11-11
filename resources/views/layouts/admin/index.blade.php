@@ -10,8 +10,16 @@
 </head>
 
 <body>
-    @include('layouts.admin.header')
-    @if (session('success'))
+    @if (auth()->user()->role == 5)
+        @include('user.layout.header')
+
+    @else
+         @include('layouts.admin.header')
+    @endif
+
+
+
+    {{-- @if (session('success'))
         <div id="alert-border-3"
             class="flex items-center p-4 mb-4 text-green-800 border-t-4 border-green-300 bg-green-50 dark:text-green-400 dark:bg-gray-800 dark:border-green-800"
             role="alert">
@@ -25,7 +33,7 @@
                 <i class="fa-solid fa-close"></i>
             </button>
         </div>
-    @endif
+    @endif --}}
     <div class="flex pt-16 overflow-hidden bg-gray-100">
         <div id="main-content"
             class="relative w-full max-w-screen-2xl mx-auto h-full overflow-y-auto bg-gray-100">
