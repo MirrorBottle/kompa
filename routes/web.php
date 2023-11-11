@@ -50,9 +50,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     });
 
-    Route::group(['namespace' => 'User', 'prefix' => 'user', 'as' => 'user.', 'middleware' => 'role:user'], function () {
-        Route::get('/dashboard', 'DashboardController@index'
-        )->name('dashboard');
-        Route::resource('customers', CustomerController::class);
+    Route::group(['prefix' => 'company', 'as' => 'company.'], function() {
+        Route::resource("users", UserController::class);
+        Route::resource("teams", UserController::class);
+        Route::get("detail", [CompanyController::class, 'detail'])->name("detail");
+        Route::put("update", [CompanyController::class, 'update'])->name("update");
     });
 });
