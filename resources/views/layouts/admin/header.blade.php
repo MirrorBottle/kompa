@@ -2,7 +2,7 @@
     <nav class="fixed z-30 w-full bg-white border-b border-gray-300 dark:bg-gray-800 dark:border-gray-700 py-3 px-4">
         <div class="flex justify-between items-center max-w-screen-2xl mx-auto">
             <div class="flex justify-start items-center">
-                <a href="/" class="flex mr-14">
+                <a href="/{{ auth()->user()->role_name }}/dashboard" class="flex mr-14">
                     <img class="h-[50px]" src="{{ asset('assets/images/logo_full.png') }}" alt="">
 
                 </a>

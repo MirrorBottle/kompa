@@ -14,8 +14,13 @@
         <input type="text" name="phone_number" id="phone_number" class="form-input" value="{{ isset($data) ? $data->phone_number : '' }}" required>
     </div>
     <div>
-        <label for="phone_number" class="form-label">Jabatan</label>
-        <select id="countries" required
+        <label for="base_salary" class="form-label">Gaji Pokok (Rp. )</label>
+        <input type="number" name="base_salary" id="base_salary" class="form-input" value="{{ isset($data) ? $data->base_salary : '' }}" required>
+    </div>
+    <div>
+        <label for="role" class="form-label">Jabatan</label>
+        <select id="role" required
+            name="role"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
             <option {{ isset($data) ? ($data->role == '5' ? 'selected' : '') : '' }} value="4">Pegawai</option>
             <option {{ isset($data) ? ($data->role == '4' ? 'selected' : '') : '' }} value="3">Manager</option>
