@@ -98,12 +98,12 @@
                             <i class="fa-solid fa-user-tag fa-2x text-gray-400 mb-1"></i>
                             <div class="text-sm text-gray-900 dark:text-white">Kustomer</div>
                         </a>
-                        <a href="#"
+                        <a href="{{ route("company.users.index") }}"
                             class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                             <i class="fa-solid fa-people-group fa-2x text-gray-400 mb-1"></i>
                             <div class="text-sm text-gray-900 dark:text-white">Pengguna</div>
                         </a>
-                        <a href="#"
+                        <a href="/logout"
                             class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray- 600 group">
                             <i class="fa-solid fa-right-from-bracket fa-2x text-error mb-1"></i>
                             <div class="text-sm text-error dark:text-white">Keluar</div>
