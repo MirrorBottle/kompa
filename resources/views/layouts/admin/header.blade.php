@@ -56,6 +56,44 @@
                             </a>
                         </li>
                         @endrole
+
+                        @role('user')
+                        <li class="mr-2">
+                            <a href="#"
+                                class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                                <i class="fa-solid fa-sack-dollar mr-2"></i>
+                                <span>Penjualan</span>
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#"
+                                class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                                <i class="fa-solid fa-hand-holding-dollar mr-2"></i>
+                                <span>Penggajian</span>
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href=""
+                                class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                                <i class="fa-solid fa-book-bookmark mr-2"></i>
+                                <span>Pembukuan</span>
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#"
+                                class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                                <i class="fa-solid fa-users mr-2"></i>
+                                <span>Tim</span>
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#"
+                                class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                                <i class="fa-solid fa-percent mr-2"></i>
+                                <span>Komisi</span>
+                            </a>
+                        </li>
+                        @endrole
                     </ul>
                 </div>
             </div>
