@@ -4,13 +4,11 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Customer;
 
-
-class CustomerController extends Controller
+class SalesController extends Controller
 {
     public function index() {
-        $custumors = Customer::where("company_id", auth()->user()->company_id)->paginate(10);
+        $custumors = Sales::where("user_id", auth()->user()->id)->paginate(10);
         return view("user.customers.index", compact('custumors'));
 
     }

@@ -10,11 +10,8 @@
                 <div class="py-5 px-4 lg:py-5">
                     <div class="flex items-center p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50"
                         role="alert">
-                        <div>
-                            <span class="font-medium">Apabila tidak ubah password, kosongkan!
-                        </div>
                     </div>
-                    <form action="" method="post">
+                    <form action="{{route('user.customers.update', $customer->id)}}" method="post">
                         @method('PUT')
                         @include('user.customers.form', ['data' => $customer])
                     </form>
