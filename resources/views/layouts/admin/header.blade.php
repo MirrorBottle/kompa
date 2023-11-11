@@ -18,7 +18,7 @@
                             </a>
                         </li>
                         <li class="mr-2">
-                            <a href="#"
+                            <a href=""
                                 class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
                                 <svg class="w-4 h-4 mr-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500"
                                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"

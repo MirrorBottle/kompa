@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             CompanySeeder::class,
             TeamSeeder::class,
             TeamMemberSeeder::class,
+            CustomerSeeder::class,
+
         ]);
     }
 }
