@@ -46,6 +46,13 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    // * RELATIONSHIP
+    public function company() {
+        return $this->belongsTo(Company::class);
+    }
+
+
+    // * MUTATOR
     public function getRoleNameAttribute($value) {
         switch ($this->role) {
             case self::ROLE_MASTER:
@@ -61,5 +68,9 @@ class User extends Authenticatable
             default:
                 return null;
         }
+    }
+
+    public function getIsAdminAttribute() {
+        return $this->role == self::ROLE_ADMIN;
     }
 }

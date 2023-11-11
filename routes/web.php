@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Web\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,5 +50,12 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['namespace' => 'User', 'prefix' => 'user', 'as' => 'user.', 'middleware' => 'role:user'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    });
+
+    Route::group(['namespace' => 'company', 'prefix' => 'company', 'as' => 'company.'], function() {
+        Route::resource("users", UserController::class);
+        Route::resource("teams", UserController::class);
+        Route::get("detail", [CompanyController::class, 'detail'])->name("detail");
+        Route::put("update", [CompanyController::class, 'update'])->name("update");
     });
 });
