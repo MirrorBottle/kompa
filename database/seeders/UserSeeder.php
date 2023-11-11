@@ -43,7 +43,9 @@ class UserSeeder extends Seeder
 
         // * USER
         User::factory()->count(12)->create([
-            'role' => 4
+            'role' => 5
         ]);
+
+
     }
 }

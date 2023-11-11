@@ -35,7 +35,7 @@
                             </a>
                         </li>
                         <li class="mr-2">
-                            <a href="#"
+                            <a href=""
                                 class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
                                 <i class="fa-solid fa-book-bookmark mr-2"></i>
                                 <span>Pembukuan</span>
