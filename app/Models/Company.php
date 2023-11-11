@@ -9,6 +9,15 @@ class Company extends Model
 {
     use HasFactory;
 
+    public $fillable = [
+        'name',
+        'email',
+        'abbreviation',
+        'contact',
+        'address',
+        'about'
+    ];
+
     public function users() {
         return $this->hasMany(User::class, 'company_id');
     }

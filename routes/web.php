@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Web\WebController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\User\CustomerController;
 
 /*
@@ -50,32 +53,6 @@ Route::middleware('auth')->group(function () {
     Route::group(['namespace' => 'User', 'prefix' => 'user', 'as' => 'user.', 'middleware' => 'role:user'], function () {
         Route::get('/dashboard', 'DashboardController@index'
         )->name('dashboard');
-
-
-
-
-
-        // Route::controller(CustomerController::class)->group(function(){
-        //     Route::get('/customers/index', 'index')->name('user.customers.index');
-        //     Route::get('/dashboard/customers/tambah', 'create')->name('customers.create');
-        //     // Route::post('/staff/mahasiswa/tambah/action','store')->name('staff.store');
-        //     // Route::get('/staff/mahasiswa/edit/{id}', 'edit')->name('staff.edit');
-        //     // Route::post('/staff/mahasiswa/edit/{id}/action','update')->name('staff.update');
-        //     // Route::post('/staff/mahasiswa/delete/{id}/action', 'delete')->name('staff.delete');
-        // });
-
-
-
-
-
         Route::resource('customers', CustomerController::class);
     });
-
-    // Route::get('/dashboard/{{}}', function(){
-    //     return view ('user.sales.index');
-    // })->name('user');
-
-
-
-
 });
