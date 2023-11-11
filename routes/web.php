@@ -48,6 +48,7 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['namespace' => 'Manager', 'prefix' => 'manager', 'as' => 'manager.', 'middleware' => 'role:manager'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+        Route::resource("customers", CustomerController::class);
     });
 
     Route::group(['prefix' => 'company', 'as' => 'company.'], function() {
