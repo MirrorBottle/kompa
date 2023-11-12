@@ -4,18 +4,23 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Sales;
+use App\Models\Customer;
+
+
 
 class SalesController extends Controller
 {
     public function index() {
-        $custumors = Sales::where("user_id", auth()->user()->id)->paginate(10);
-        return view("user.customers.index", compact('custumors'));
+        $sales = Sales::where("user_id", auth()->user()->id)->paginate(10);
+        return view("user.sales.index", compact('sales'));
 
     }
 
     public function create()
     {
-        return view("user.customers.create");
+        $customers = Customer::all();
+        return view("user.sales.create", compact('customers'));
     }
 
     /**
@@ -23,32 +28,33 @@ class SalesController extends Controller
      */
     public function store(Request $request)
     {
-        $custumors = Customer::create($request->all());
-        return redirect()->route('user.customers.index')->with('success','Data departemen berhasil dibuat!');
+        $sales = Sales::create($request->all());
+        return redirect()->route('user.sales.index')->with('success','Data penjualan berhasil dibuat!');
     }
 
-    public function edit(Customer $customer)
+    public function edit(Sales $sale)
     {
-        return view("user.customers.edit", compact('customer'));
+        $customers = Customer::all();
+        return view("user.sales.edit", compact('sale','customers' ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, Sales $sale)
     {
-        $customer->update($request->all());
-        return redirect()->route('user.customers.index')->with('success','Data departemen berhasil diubah!');
+        $sale->update($request->all());
+        return redirect()->route('user.sales.index')->with('success','Data penjualan berhasil diubah!');
 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Customer $customer)
+    public function destroy(Sales $sale)
     {
-        $customer->delete();
-        return redirect()->route('user.customers.index')->with('success','Data departemen berhasil dihapus!');
+        $sale->delete();
+        return redirect()->route('user.sales.index')->with('success','Data penjualan berhasil dihapus!');
 
     }
 

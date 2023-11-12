@@ -1,5 +1,5 @@
 @extends('layouts.admin.index')
-@section('title', 'Edit Data Pelanggan')
+@section('title', 'Edit Data Penjualan')
 @section('content')
     <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
 
@@ -7,9 +7,9 @@
             <div class="flex items-center p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50"
                 role="alert">
             </div>
-            <form action="{{route('user.customers.update', $customer->id)}}" method="post">
+            <form action="{{route('user.sales.update', $sale->id)}}" method="post">
                 @method('PUT')
-                @include('user.customers.form', ['data' => $customer])
+                @include('user.sales.form', ['data' => $sale])
             </form>
         </div>
     </div>

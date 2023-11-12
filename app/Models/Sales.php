@@ -13,6 +13,9 @@ class Sales extends Model
 {
     use HasFactory;
 
+    protected $table = 'sales';
+    protected $fillable = ['company_id', 'user_id', 'customer_id', 'salary_id', 'sale_date', 'sale_amount'];
+
     public function company() {
         return $this->belongsTo(Company::class, 'company_id', 'id');
     }

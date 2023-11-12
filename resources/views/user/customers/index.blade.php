@@ -1,14 +1,14 @@
 @extends('layouts.admin.index')
-@section('title', 'Daftar Custumor')
+@section('title', 'Daftar Pelanggan')
 @section('content')
 
-<div class="flex pt-16 overflow-hidden bg-gray-100">
+{{-- <div class="flex pt-16 overflow-hidden bg-gray-100">
     <div id="main-content"
         class="relative w-full max-w-screen-2xl mx-auto h-full overflow-y-auto bg-gray-100 px-5">
-        <main>
+        <main> --}}
 
-            <div class="px-4 pt-6 2xl:px-0 " >
-                <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+            {{-- <div class="px-4 pt-6 2xl:px-0 " > --}}
+                <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden ">
                     <div class="flex flex-row md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                         <div class="w-full md:w-1/2">
                             <form class="flex items-center">
@@ -144,8 +144,8 @@
                         {{ $custumors->links() }}
                     </nav>
                 </div>
-            </div>
-        </main>
+            {{-- </div> --}}
+        {{-- </main>
     </div>
-</div>
+</div> --}}
 @endsection

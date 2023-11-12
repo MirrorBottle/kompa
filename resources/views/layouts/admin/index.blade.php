@@ -27,11 +27,10 @@
             </button>
         </div>
     @endif --}}
-    @include('layouts.admin.header')
     <div class="flex pt-16 overflow-hidden bg-gray-100">
         <main id="main-content"
             class="relative w-full max-w-screen-2xl mx-auto h-full overflow-y-auto bg-gray-100 px-4 pt-6 2xl:px-0">
-            <h1 class="mb-6 font-extrabold text-secondary text-xl md:text-5xl pb-2 pt-4">@yield('title')</h1>
+            <h1 class="mb-6 font-extrabold text-secondary text-xl md:text-5xl pb-2 pt-4 px-4">@yield('title')</h1>
             @if (session('success'))
                 <div id="alert-border-3"
                     class="flex items-center p-4 mb-4 text-green-800 border-t-4 border-green-300 bg-green-50 dark:text-green-400 dark:bg-gray-800 dark:border-green-800"
@@ -47,7 +46,7 @@
                     </button>
                 </div>
             @endif
-            <div class="min-h-screen">
+            <div class="min-h-screen p-4">
                 @yield('content')
             </div>
         </main>

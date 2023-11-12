@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\User\CustomerController;
+use App\Http\Controllers\User\SalesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +56,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', 'DashboardController@index'
         )->name('dashboard');
         Route::resource('customers', CustomerController::class);
+        Route::resource('sales', SalesController::class);
+
     });
     Route::group(['prefix' => 'company', 'as' => 'company.'], function() {
         Route::resource("users", UserController::class);

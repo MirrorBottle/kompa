@@ -1,5 +1,5 @@
 @extends('layouts.admin.index')
-@section('title', 'Tambah Data Pelanggan')
+@section('title', 'Tambah Penjualan')
 @section('content')
 {{-- <div class="flex pt-16 overflow-hidden bg-gray-100 h-full">
     <div id="main-content"
@@ -7,8 +7,8 @@
         <main> --}}
             <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden ">
                 <div class="py-5 px-4 lg:py-5">
-                    <form action="{{route('user.customers.store')}}" method="post">
-                        @include('user.customers.form')
+                    <form action="{{route('user.sales.store')}}" method="post">
+                        @include('user.sales.form')
                     </form>
                 </div>
             </div>
