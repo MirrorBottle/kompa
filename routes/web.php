@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\User\CustomerController;
 use App\Http\Controllers\User\SalesController;
+use App\Http\Controllers\User\ProfileController;
+
 
 
 /*
@@ -57,8 +59,12 @@ Route::middleware('auth')->group(function () {
         )->name('dashboard');
         Route::resource('customers', CustomerController::class);
         Route::resource('sales', SalesController::class);
-
+        // Route::resource('profile', ProfileController::class);
+        Route::controller(ProfileController::class)->group(function () {
+            Route::get('/profile', 'index');});
     });
+
+
     Route::group(['prefix' => 'company', 'as' => 'company.'], function() {
         Route::resource("users", UserController::class);
         Route::resource("teams", UserController::class);

@@ -87,7 +87,7 @@
                 <div class="mr-3 -mb-1 hidden sm:block">
                     <span></span>
                 </div>
-
+                @role('admin')
                 <button type="button" data-dropdown-toggle="apps-dropdown" data-tooltip-target="tooltip-toggle"
                     class="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100">
                     <i class="fa-solid fa-sliders mr-2"></i>
@@ -132,6 +132,40 @@
                             <i class="fa-solid fa-right-from-bracket fa-2x text-error mb-1"></i>
                             <div class="text-sm text-error dark:text-white">Keluar</div>
                         </a>
+                @endrole
+
+                @role('user')
+                    <button type="button" data-dropdown-toggle="apps-dropdown" data-tooltip-target="tooltip-toggle"
+                        class="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100">
+                        <i class="fa-solid fa-sliders mr-2"></i>
+                        <span>Control Panel</span>
+                    </button>
+
+                    <div class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white rounded divide-y divide-gray-100 shadow-lg dark:bg-gray-700 dark:divide-gray-600"
+                        id="apps-dropdown"
+                        style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(1394.4px, 62.4px, 0px);"
+                        data-popper-placement="bottom">
+                        <div class="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50">
+                            <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                {{ auth()->user()->name }}
+                            </p>
+                            <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                                {{ auth()->user()->role_name }}
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 p-4">
+                            <a href=""
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
+                                <i class="fa-solid fa-user-tie fa-2x text-gray-400 mb-1"></i>
+                                <div class="text-sm text-gray-900 dark:text-white">Profil</div>
+                            </a>
+                            <a href="/logout"
+                                class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray- 600 group">
+                                <i class="fa-solid fa-right-from-bracket fa-2x text-error mb-1"></i>
+                                <div class="text-sm text-error dark:text-white">Keluar</div>
+                            </a>
+                        @endrole
+
                     </div>
                 </div>
 
