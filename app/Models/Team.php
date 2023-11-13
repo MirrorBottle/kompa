@@ -13,7 +13,7 @@ class Team extends Model
         return $this->belongsTo(Company::class, 'company_id', 'id');
     }
 
-    public function reports() {
-        return $this->hasMany(Report::class, 'team_id', 'id');
+    public function members() {
+        return $this->belongsToMany(User::class, 'team_members')->orderBy('role');
     }
 }

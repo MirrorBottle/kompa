@@ -47,13 +47,25 @@ class User extends Authenticatable
     ];
 
     // * RELATIONSHIP
-    public function company() {
+    public function company()
+    {
         return $this->belongsTo(Company::class);
+    }
+
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class, 'team_members');
     }
 
 
     // * MUTATOR
-    public function getRoleNameAttribute($value) {
+    public function getTeamAttribute()
+    {
+        return $this->teams()->orderBy('id', 'desc')->first();
+    }
+
+    public function getRoleNameAttribute($value)
+    {
         switch ($this->role) {
             case self::ROLE_MASTER:
                 return 'master';
@@ -70,7 +82,26 @@ class User extends Authenticatable
         }
     }
 
-    public function getIsAdminAttribute() {
+    public function getRoleNameBadgeAttribute($value)
+    {
+        $class_name = '';
+        switch ($this->role) {
+            case self::ROLE_MASTER:
+                $class_name = 'bg-blue-100 text-blue-800';
+            case self::ROLE_ADMIN:
+                $class_name = 'bg-gray-100 text-gray-800';
+            case self::ROLE_FINANCE:
+                $class_name = 'bg-green-100 text-green-800';
+            case self::ROLE_MANAGER:
+                $class_name = 'bg-blue-100 text-blue-800';
+            case self::ROLE_USER:
+                $class_name = 'bg-blue-100 text-blue-800';
+        }
+        return "<span class='$class_name text-sm font-medium me-2 px-4 py-1 rounded'>$this->role_name</span>";
+    }
+
+    public function getIsAdminAttribute()
+    {
         return $this->role == self::ROLE_ADMIN;
     }
 }

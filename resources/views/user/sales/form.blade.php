@@ -9,7 +9,7 @@
     </div>
     <div>
         <label  class="form-label">Nama Pelanggan</label>
-        <select type="text" name="customer_id" id= 'customer_id' class="w-full" >
+        <select type="text" name="customer_id" id= 'customer_id' class="w-full select2 form-input" >
             <option value="{{ isset($data) ? $data->customer_id : '' }}" disabled selected>{{isset($data) ? $data->customer->name : ""}} </option>
             @foreach ($customers as $csm)
                 <option value="{{$csm->id}}">{{$csm->name}}</option>

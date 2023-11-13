@@ -20,7 +20,7 @@ class CustomerFactory extends Factory
     {
         return [
             'company_id' => Company::all()->random()->id,
-            'name' => fake()->name(),
+            'name' => fake()->company(),
             'abbreviation' => fake()->companySuffix(),
             'phone_number' => fake()->phoneNumber(),
             'email' => fake()->unique()->safeEmail(),

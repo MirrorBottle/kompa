@@ -22,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Blade::if('role', function ($role) {
+            if(gettype($role) == 'array') {
+                return in_array(auth()->user()->role_name, $role);
+            }
             return auth()->user()->role_name == $role;
         });
     }

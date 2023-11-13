@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $users = User::where("company_id", auth()->user()->company_id)
             ->paginate(6);
-        return view("user.index", compact('users'));
+        return view("admin.users.index", compact('users'));
     }
 
     /**
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view("user.create");
+        return view("admin.users.create");
     }
 
     /**
@@ -35,7 +35,7 @@ class UserController extends Controller
         $user = User::create($request->merge([
             'password' => Hash::make($request->password)
         ])->toArray());
-        return redirect()->route('company.users.index')->with('success','Data pegawai berhasil dibuat!');
+        return redirect()->route('admin.users.index')->with('success','Data pegawai berhasil dibuat!');
     }
 
     /**
@@ -51,7 +51,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view("user.edit", compact('user'));
+        return view("admin.users.edit", compact('user'));
     }
 
     /**
@@ -68,7 +68,7 @@ class UserController extends Controller
         }
 
         $user->update($request->all());
-        return redirect()->route('company.users.index')->with('success','Data pegawai berhasil diubah!');
+        return redirect()->route('admin.users.index')->with('success','Data pegawai berhasil diubah!');
 
     }
 
@@ -78,7 +78,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('company.users.index')->with('success','Data pegawai berhasil dihapus!');
+        return redirect()->route('admin.users.index')->with('success','Data pegawai berhasil dihapus!');
 
     }
 }

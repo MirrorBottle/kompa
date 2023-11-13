@@ -38,8 +38,13 @@ Route::controller(AuthController::class)->group(function () {
 
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/user/profile', [ProfileController::class, 'index'])->name('user.profile');
+    Route::put('/user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'role:admin'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+        Route::resource("users", UserController::class);
+        Route::resource("teams", UserController::class);
     });
 
     Route::group(['namespace' => 'Master', 'prefix' => 'master', 'as' => 'master.', 'middleware' => 'role:master'], function () {
@@ -50,24 +55,20 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     });
 
-    Route::group(['namespace' => 'Manager', 'prefix' => 'manager', 'as' => 'manager.', 'middleware' => 'role:manager'], function () {
-        Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-        Route::resource("customers", CustomerController::class);
-    });
+    // Route::group(['namespace' => 'Manager', 'prefix' => 'manager', 'as' => 'manager.', 'middleware' => 'role:manager'], function () {
+    //     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    //     Route::resource("customers", CustomerController::class);
+    // });
     Route::group(['namespace' => 'User', 'prefix' => 'user', 'as' => 'user.', 'middleware' => 'role:user'], function () {
-        Route::get('/dashboard', 'DashboardController@index'
+        Route::get(
+            '/dashboard',
+            'DashboardController@index'
         )->name('dashboard');
         Route::resource('customers', CustomerController::class);
         Route::resource('sales', SalesController::class);
-        // Route::resource('profile', ProfileController::class);
-        Route::controller(ProfileController::class)->group(function () {
-            Route::get('/profile', 'index');});
     });
 
-
-    Route::group(['prefix' => 'company', 'as' => 'company.'], function() {
-        Route::resource("users", UserController::class);
-        Route::resource("teams", UserController::class);
+    Route::group(['prefix' => 'company', 'as' => 'company.'], function () {
         Route::get("detail", [CompanyController::class, 'detail'])->name("detail");
         Route::put("update", [CompanyController::class, 'update'])->name("update");
     });

@@ -10,8 +10,8 @@ use App\Models\Customer;
 class CustomerController extends Controller
 {
     public function index() {
-        $custumors = Customer::where("company_id", auth()->user()->company_id)->paginate(10);
-        return view("user.customers.index", compact('custumors'));
+        $customers = Customer::where("company_id", auth()->user()->company_id)->paginate(10);
+        return view("user.customers.index", compact('customers'));
 
     }
 
@@ -25,7 +25,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $custumors = Customer::create($request->all());
+        $customers = Customer::create($request->all());
         return redirect()->route('user.customers.index')->with('success','Data pelanggan berhasil dibuat!');
     }
 

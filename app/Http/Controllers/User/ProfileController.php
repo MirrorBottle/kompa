@@ -13,6 +13,9 @@ class ProfileController extends Controller
         $user = User::where("id", auth()->user()->id);
         $profilee = true;
         return view("user.profile.index", compact('user', 'profilee'));
+    }
+
+    public function update(Request $request) {
 
     }
 }

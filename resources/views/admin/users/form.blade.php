@@ -33,7 +33,7 @@
     </div>
 </div>
 <div class="flex justify-between mt-5">
-    <a class="btn-secondary" href="{{ route('company.users.index') }}">
+    <a class="btn-secondary" href="{{ route('admin.users.index') }}">
         <i class="fa-solid fa-chevron-left mr-2"></i>
         Kembali
     </a>

@@ -16,6 +16,10 @@ class Sales extends Model
     protected $table = 'sales';
     protected $fillable = ['company_id', 'user_id', 'customer_id', 'salary_id', 'sale_date', 'sale_amount'];
 
+    public $casts = [
+        'sale_date' => 'date'
+    ];
+    // * RELATIONSHIP
     public function company() {
         return $this->belongsTo(Company::class, 'company_id', 'id');
     }
@@ -31,6 +35,8 @@ class Sales extends Model
     public function user() {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    // * MUTATORS
 
 
 }

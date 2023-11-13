@@ -1,7 +1,7 @@
 @extends('layouts.admin.index')
 @section('title', 'Daftar Penjualan')
 @section('content')
-    <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+    <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden p-2">
         <div class="flex flex-row md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
             <div class="w-full md:w-1/2">
                 <form class="flex items-center">
@@ -23,7 +23,7 @@
             </div>
             <div
                 class="w-full md:w-auto flex flex-row md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0 ">
-                <a href="{{route('user.sales.create')}}"
+                <a href="{{ route('user.sales.create') }}"
                     class="  flex items-center justify-center text-white bg-secondary hover:bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary focus:outline-none dark:focus:ring-primary">
                     <i class="fa-solid fa-plus mr-2"></i>
                     Tambah Penjualan
@@ -69,10 +69,10 @@
                     @forelse ($sales as $sale)
                         <tr class="border-b dark:border-gray-700">
                             <th scope="row" class="px-4 py-3 font-medium text-gray-900">
-                                {{ $sale->sale_date }}
+                                {{ $sale->sale_date->format("d/m/Y") }}
                             </th>
                             <td class="px-4 py-3">
-                                {{ $sale->customer->name}}
+                                {{ $sale->customer->name }}
                             </td>
                             <td class="px-4 py-3">
                                 {{ $sale->sale_amount }}
@@ -90,15 +90,14 @@
                                 </button>
                                 <div id="{{ $sale->id }}"
                                     class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                        aria-labelledby="">
+                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="">
                                         <li>
                                             <a href="{{ route('user.sales.edit', $sale->id) }}"
                                                 class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ubah</a>
                                         </li>
                                     </ul>
                                     <div class="py-1">
-                                        <form action="{{route('user.sales.destroy', $sale->id)}}" method="post">
+                                        <form action="{{ route('user.sales.destroy', $sale->id) }}" method="post">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit"
@@ -114,9 +113,15 @@
                     @empty
                         <tr>
                             <th colspan="4">
+
                                 <div class="text-center mt-4">
-                                    <i class="fa-solid fa-inbox fa-3x"></i>
-                                    <h1 class="mb-4 text-xl leading-none tracking-tight text-gray mt-4">Tidak ada data</h1>
+                                    <img class="w-32 h-32 mx-auto"
+                                        src="https://res.cloudinary.com/daqsjyrgg/image/upload/v1690261234/di7tvpnzsesyo7vvsrq4.svg"
+                                        alt="image empty states">
+                                    <p class="text-gray-700 font-medium text-lg text-center">Datamu masih kosong
+                                        sepertinya...
+                                    </p>
+                                    <p class="text-gray-500 text-center">Kamu bisa menambah datamu dengan mudah!</p>
                                 </div>
                             </th>
                         </tr>
@@ -126,7 +131,7 @@
             </table>
         </div>
         <nav class="space-y-3 md:space-y-0 p-4">
-            {{-- {{ $departments->links() }} --}}
+            {{ $sales->links() }}
         </nav>
     </div>
 @endsection

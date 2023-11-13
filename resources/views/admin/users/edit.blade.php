@@ -10,7 +10,7 @@
                     <span class="font-medium">Apabila tidak ubah password, kosongkan!
                 </div>
             </div>
-            <form action="{{ route('company.users.update', $user->id) }}" method="post">
+            <form action="{{ route('admin.users.update', $user->id) }}" method="post">
                 @method('PUT')
                 @include('user.form', ['data' => $user])
             </form>

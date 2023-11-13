@@ -12,6 +12,14 @@ export default {
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
+    safelist: [
+        {
+            pattern: /^bg-/,
+        },
+        {
+            pattern: /^text-/
+        }
+    ],
     daisyui: {
         themes: ["light", {
             kompa: {
