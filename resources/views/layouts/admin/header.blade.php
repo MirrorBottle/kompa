@@ -125,8 +125,8 @@
                         <p class="text-sm text-gray-900 dark:text-white" role="none">
                             {{ auth()->user()->name }}
                         </p>
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                            {{ auth()->user()->role_name }}
+                        <p class="mt-2" role="none">
+                            {!! auth()->user()->role_name_badge !!}
                         </p>
                     </div>
                     <div class="grid grid-cols-3 gap-4 p-4">
