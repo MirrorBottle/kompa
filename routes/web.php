@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CommissionRateController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Web\WebController;
@@ -44,6 +45,8 @@ Route::middleware('auth')->group(function () {
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'role:admin'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::resource("users", UserController::class);
+        Route::resource("commission-rates", CommissionRateController::class);
+
         Route::resource("teams", TeamController::class);
     });
 

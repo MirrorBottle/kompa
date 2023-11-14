@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('balance_book_id')->nullable();
             $table->bigInteger('base_salary');
             $table->integer('commission_rate');
             $table->bigInteger('commission_amount');
@@ -28,6 +29,15 @@ return new class extends Migration
             $table->date('end_date');
             $table->date('approval_date');
             $table->timestamps();
+
+            $table->foreign('company_id')->references('id')->on('companies')->cascadeOnDelete();
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('balance_book_id')->references('id')->on('balance_books')->cascadeOnDelete();
+
+            $table->index(['company_id', 'user_id', 'balance_book_id']);
+            $table->index('company_id');
+            $table->index('user_id');
+            $table->index('balance_book_id');
         });
     }
 

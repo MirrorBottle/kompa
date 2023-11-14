@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('commission_rates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('company_id');
-            $table->date('name');
-            $table->integer('commission_percentage');
+            $table->string('name');
+            $table->float('percentage');
             $table->timestamps();
 
             $table->foreign('company_id')->references('id')->on('companies')->cascadeOnDelete();
