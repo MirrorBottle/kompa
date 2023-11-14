@@ -88,14 +88,19 @@ class User extends Authenticatable
         switch ($this->role) {
             case self::ROLE_MASTER:
                 $class_name = 'bg-blue-100 text-blue-800';
+                break;
             case self::ROLE_ADMIN:
-                $class_name = 'bg-gray-100 text-gray-800';
+                $class_name = 'bg-red-100 text-red-800';
+                break;
             case self::ROLE_FINANCE:
                 $class_name = 'bg-green-100 text-green-800';
+                break;
             case self::ROLE_MANAGER:
-                $class_name = 'bg-blue-100 text-blue-800';
+                $class_name = 'bg-yellow-100 text-yellow-800';
+                break;
             case self::ROLE_USER:
                 $class_name = 'bg-blue-100 text-blue-800';
+                break;
         }
         return "<span class='$class_name text-sm font-medium me-2 px-4 py-1 rounded'>$this->role_name</span>";
     }

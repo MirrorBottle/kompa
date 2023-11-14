@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'role:admin'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::resource("users", UserController::class);
-        Route::resource("teams", UserController::class);
+        Route::resource("teams", TeamController::class);
     });
 
     Route::group(['namespace' => 'Master', 'prefix' => 'master', 'as' => 'master.', 'middleware' => 'role:master'], function () {
@@ -70,6 +70,7 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'company', 'as' => 'company.'], function () {
         Route::get("detail", [CompanyController::class, 'detail'])->name("detail");
+        Route::get("customer", [CompanyController::class, 'customer'])->name("customer");
         Route::put("update", [CompanyController::class, 'update'])->name("update");
     });
 });

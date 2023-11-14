@@ -21,7 +21,7 @@
         <label for="role" class="form-label">Jabatan</label>
         <select id="role" required
             name="role"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+            class="form-input select2">
             <option {{ isset($data) ? ($data->role == '5' ? 'selected' : '') : '' }} value="4">Pegawai</option>
             <option {{ isset($data) ? ($data->role == '4' ? 'selected' : '') : '' }} value="3">Manager</option>
             <option {{ isset($data) ? ($data->role == '3' ? 'selected' : '') : '' }} value="3">Finance</option>

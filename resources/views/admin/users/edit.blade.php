@@ -12,7 +12,7 @@
             </div>
             <form action="{{ route('admin.users.update', $user->id) }}" method="post">
                 @method('PUT')
-                @include('user.form', ['data' => $user])
+                @include('admin.users.form', ['data' => $user])
             </form>
         </div>
     </div>

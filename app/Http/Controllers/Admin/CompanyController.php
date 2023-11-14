@@ -18,6 +18,15 @@ class CompanyController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     */
+    public function customer()
+    {
+        $company = auth()->user()->company;
+        return view("company.show", compact('company'));
+    }
+
+    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request)

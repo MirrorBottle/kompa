@@ -2,9 +2,10 @@
     $links = [
         'admin' => [
             [
-                'route' => '',
-                'icon' => '',
-                'label' => '',
+                'route' => route('admin.teams.index'),
+                'icon' => 'fa-solid fa-users',
+                'url' => 'admin/teams*',
+                'label' => 'Tim',
             ],
         ],
         'user' => [
@@ -55,7 +56,7 @@
                         </li>
 
                         {{-- * ADMIN MENUS --}}
-                        @role('admin')
+                        {{-- @role('admin')
                             <li class="mr-2">
                                 <a href="#"
                                     class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
@@ -91,7 +92,7 @@
                                     <span>Komisi</span>
                                 </a>
                             </li>
-                        @endrole
+                        @endrole --}}
                         @foreach ($links as $link)
                         @php
                             $url = $link['url']
