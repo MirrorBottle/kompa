@@ -53,7 +53,11 @@
                                 {{ $commission->percentage }} %
                             </td>
                             <td class="px-4 py-3">
-                                {{ $commission->active_users->pluck("name")->join(", ") }}
+                                <ul>
+                                    @foreach ($commission->active_users->pluck('name') as $name)
+                                        <li>{{ $name }}</li>
+                                    @endforeach
+                                </ul>
                             </td>
                             <td class="px-4 py-3 flex items-center justify-end">
                                 <button id="{{ $commission->id }}-button" data-dropdown-toggle="{{ $commission->id }}"
@@ -76,7 +80,8 @@
                                         </li>
                                     </ul>
                                     <div class="py-1">
-                                        <form action="{{ route('admin.commission-rates.destroy', $commission->id) }}" method="post">
+                                        <form action="{{ route('admin.commission-rates.destroy', $commission->id) }}"
+                                            method="post">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit"

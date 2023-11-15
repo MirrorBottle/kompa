@@ -13,7 +13,7 @@ class CommissionRateSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i=1; $i < 3; $i++) {
+        for ($i=1; $i <= 2; $i++) {
             DB::table('commission_rates')->insert([
                 [
                     'name' => "Komisi 5%",

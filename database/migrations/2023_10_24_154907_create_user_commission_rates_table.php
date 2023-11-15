@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreign('commission_rate_id')->references('id')->on('commission_rates')->cascadeOnDelete();
             $table->boolean('is_invalid')->default(0);
-            $table->date('invalid_date');
+            $table->date('invalid_date')->nullable();
 
             $table->index(['user_id', 'commission_rate_id']);
             $table->index('user_id');

@@ -54,7 +54,7 @@
                     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
                         <li class="mr-2">
                             <a href="/{{$dashboard_url}}"
-                                class="inline-flex items-center justify-center p-4 border-b-2 {{ Request::is($dashboard_url) ? 'border-primary text-primary border-b-2' : 'hover:text-gray-600 hover:border-gray-300'}} rounded-t-lg active"
+                                class="inline-flex items-center justify-center p-4 {{ Request::is($dashboard_url) ? 'border-primary text-primary border-b-2' : 'hover:text-gray-600 hover:border-gray-300'}} rounded-t-lg active"
                                 aria-current="page">
                                 <i class="fa-solid fa-chart-simple mr-2"></i>
                                 <span>Dashboard</span>

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             TeamMemberSeeder::class,
             CustomerSeeder::class,
             CommissionRateSeeder::class,
+            UserCommissionRateSeeder::class,
             SalesSeeder::class,
 
         ]);

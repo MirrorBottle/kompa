@@ -57,11 +57,19 @@ class User extends Authenticatable
         return $this->belongsToMany(Team::class, 'team_members');
     }
 
+    public function commissions() {
+        return $this->belongsToMany(CommissionRate::class, 'user_commission_rates');
+    }
+
 
     // * MUTATOR
     public function getTeamAttribute()
     {
         return $this->teams()->orderBy('id', 'desc')->first();
+    }
+
+    public function getCommissionAttribute() {
+        return $this->commissions()->where('is_invalid', 0)->first();
     }
 
     public function getRoleNameAttribute($value)

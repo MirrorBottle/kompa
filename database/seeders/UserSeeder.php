@@ -25,6 +25,23 @@ class UserSeeder extends Seeder
             'email' => 'admin1@gmail.com',
             'role'  => 2
         ]);
+
+        // * FINANCE
+        User::factory()->count(1)->create([
+            'role' => 3
+        ]);
+
+        // * MANAGER
+        User::factory()->count(2)->create([
+            'role' => 4
+        ]);
+
+        // * USER
+        User::factory()->count(6)->create([
+            'role' => 5
+        ]);
+
+        // * ADMIN
         User::factory()->create([
             'name'  => 'admin2',
             'email' => 'admin2@gmail.com',
@@ -37,12 +54,12 @@ class UserSeeder extends Seeder
         ]);
 
         // * MANAGER
-        User::factory()->count(1)->create([
+        User::factory()->count(2)->create([
             'role' => 4
         ]);
 
         // * USER
-        User::factory()->count(12)->create([
+        User::factory()->count(6)->create([
             'role' => 5
         ]);
 

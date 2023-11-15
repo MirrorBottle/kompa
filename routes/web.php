@@ -8,11 +8,11 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\UserCommissionRateController;
 use App\Http\Controllers\User\CustomerController;
 use App\Http\Controllers\User\SalesController;
 use App\Http\Controllers\User\ProfileController;
-
-
+use App\Models\UserCommissionRate;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,10 +42,14 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/user/profile', [ProfileController::class, 'index'])->name('user.profile');
     Route::put('/user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
+
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'role:admin'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::resource("users", UserController::class);
         Route::resource("commission-rates", CommissionRateController::class);
+        Route::resource("user-commission-rates", UserCommissionRateController::class)->except(['index', 'create', 'show']);
+        Route::get('user-commission-rates/{user_id}', [UserCommissionRateController::class, 'index'])->name("user-commission-rates.index");
+        Route::get('user-commission-rates/create/{user_id}', [UserCommissionRateController::class, 'create'])->name("user-commission-rates.create");
 
         Route::resource("teams", TeamController::class);
     });

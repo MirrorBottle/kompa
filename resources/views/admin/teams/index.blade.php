@@ -52,7 +52,11 @@
                                 {{ $team->manager ? $team->manager->name : 'Tidak ada' }}
                             </td>
                             <td class="px-4 py-3">
-                                {{ $team->users->pluck("name")->join(", ") }}
+                                <ul>
+                                    @foreach ($team->users->pluck("name") as $name)
+                                        <li>{{ $name }}</li>
+                                @endforeach
+                                </ul>
                             </td>
                             <td class="px-4 py-3 flex items-center justify-end">
                                 <button id="{{ $team->id }}-button" data-dropdown-toggle="{{ $team->id }}"

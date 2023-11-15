@@ -18,19 +18,16 @@ class CompanySeeder extends Seeder
             'user_id'  => 2
         ]);
         Company::factory()->create([
-            'user_id'  => 3
+            'user_id'  => 12
         ]);
 
         // * UPDATE USERS COMPANY
-        User::whereIn("id", [
-            2, 4, 6, 7, 8, 9, 10, 11
-        ])->update([
+
+        User::whereIn("id", range(2, 11))->update([
             "company_id" => 1
         ]);
 
-        User::whereIn("id", [
-            3, 5, 12, 13, 14, 15, 16, 17
-        ])->update([
+        User::whereIn("id", range(12, 22))->update([
             "company_id" => 2
         ]);
     }
