@@ -19,6 +19,8 @@ use App\Http\Controllers\User\CustomerController;
 use App\Http\Controllers\User\SalesController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Manager\ManagerController;
+use App\Http\Controllers\Manager\SalaryController as ManagerSalaryController;
+
 use App\Models\UserCommissionRate;
 
 use App\Http\Controllers\Finance\UserCommissionRateController as ManagerUserCommissionRateController;
@@ -85,6 +87,8 @@ Route::middleware('auth')->group(function () {
         Route::resource("user-commission-rates", ManagerUserCommissionRateController::class)->except(['index', 'create', 'show']);
         Route::get('user-commission-rates/{user_id}', [ManagerUserCommissionRateController::class, 'index'])->name("user-commission-rates.index");
         Route::get('user-commission-rates/create/{user_id}', [ManagerUserCommissionRateController::class, 'create'])->name("user-commission-rates.create");
+
+        Route::get('sales/create/{user_id}', [ManagerSalaryController::class, 'create'])->name("sales.create");
     });
 
     Route::group(['namespace' => 'User', 'prefix' => 'user', 'as' => 'user.', 'middleware' => 'role:user'], function () {
@@ -96,14 +100,6 @@ Route::middleware('auth')->group(function () {
         Route::resource('sales', SalesController::class);
     });
 
-    Route::group(['namespace' => 'Manager', 'prefix' => 'manager', 'as' => 'manager.', 'middleware' => 'role:manager'], function () {
-        Route::get(
-            '/dashboard',
-            'DashboardController@index'
-        )->name('dashboard');
-        // Route::resource('manager', ManagerController::class);
-        Route::get('/pegawai', [ManagerController::class, 'index']);
-    });
 
     Route::group(['prefix' => 'company', 'as' => 'company.'], function () {
         Route::get("detail", [CompanyController::class, 'detail'])->name("detail");

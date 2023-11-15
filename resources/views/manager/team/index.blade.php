@@ -69,7 +69,7 @@
                                                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rencana Komisi</a>
                                             </li>
                                             <li>
-                                                <a href=""
+                                                <a href="{{ route('manager.sales.create', $member->user_id) }}"
                                                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Penggajian</a>
                                             </li>
                                         </ul>
