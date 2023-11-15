@@ -13,37 +13,16 @@ class SalaryController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+        $salaries = Salary::where("status", "!=", Salary::STATUS_DRAFT)
+            ->orderBy('id', 'desc')
+            ->paginate(6);
+        return view("finance.salaries.index", compact('salaries'));
     }
 
     /**
      * Display the specified resource.
      */
     public function show(Salary $salary)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Salary $salary)
     {
         //
     }

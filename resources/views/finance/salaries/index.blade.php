@@ -1,5 +1,5 @@
 @extends('layouts.admin.index')
-@section('title', 'Tim')
+@section('title', 'Daftar Penggajian')
 @section('content')
     <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden p-2">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
@@ -26,55 +26,68 @@
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-
-                        <th scope="col" class="px-4 py-3">Nama</th>
-                        <th scope="col" class="px-4 py-3">Email</th>
+                        <th scope="col" class="px-4 py-3">Status</th>
+                        <th scope="col" class="px-4 py-3">Nama Manager</th>
+                        <th scope="col" class="px-4 py-3">Nama Pegawai</th>
+                        <th scope="col" class="px-4 py-3">Tgl</th>
                         <th scope="col" class="px-4 py-3">Komisi</th>
-
+                        <th scope="col" class="px-4 py-3">Total</th>
                         <th scope="col" class="px-4 py-3">
                             <span class="sr-only">Aksi</span>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($members as $member)
+                    @forelse ($salaries as $salary)
                         <tr class="border-b dark:border-gray-700">
                             <th scope="row" class="px-4 py-3 font-medium text-gray-900">
-                                {{ $member->user->name }}
+                                {!! $salary->status_name_badge !!}
                             </th>
                             <td class="px-4 py-3">
-                                {{ $member->user->email }}
+                                {{ $salary->user->name }}
                             </td>
                             <td class="px-4 py-3">
-                                {{ $member->user->commission ? $member->user->commission->name : 'Tidak ada' }}
+                                {{ $salary->start_date->format('d/m') }} - {{ $salary->end_date->format('d/m/Y') }}
+                            </td>
+                            <td class="px-4 py-3">
+                                {{ helperFormatCurrency($salary->commission_amount) }}
+                            </td>
+                            <td class="px-4 py-3">
+                                {{ helperFormatCurrency($salary->total) }}
+
                             </td>
                             <td class="px-4 py-3 flex items-center justify-end">
-                                <td class="px-4 py-3 flex items-center justify-end">
-                                    <button id="{{ $member->id }}-button" data-dropdown-toggle="{{ $member->id }}"
-                                        data-dropdown-placement="top"
-                                        class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
-                                        type="button">
-                                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                        </svg>
-                                    </button>
-                                    <div id="{{ $member->id }}"
-                                        class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                            aria-labelledby="{{ $member->id }}-button">
-                                            <li>
-                                                <a href="{{ route("manager.user-commission-rates.index", $member->user_id) }}"
-                                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rencana Komisi</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('manager.sales.create', $member->user_id) }}"
-                                                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Penggajian</a>
-                                            </li>
-                                        </ul>
+                                <button id="{{ $salary->id }}-button" data-dropdown-toggle="{{ $salary->id }}"
+                                    data-dropdown-placement="top"
+                                    class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
+                                    type="button">
+                                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                    </svg>
+                                </button>
+                                <div id="{{ $salary->id }}"
+                                    class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                                        aria-labelledby="{{ $salary->id }}-button">
+                                        <li>
+                                            <a href="{{ route('finance.salaries.show', $salary->id) }}"
+                                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Detail</a>
+                                        </li>
+                                    </ul>
+                                    <div class="py-1">
+                                        <form action="{{ route('finance.salaries.destroy', $salary->id) }}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit"
+                                                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                                                onclick="return confirm('Are you sure want to delete?')">
+                                                Hapus
+                                            </button>
+                                        </form>
                                     </div>
-                                </td>
+                                </div>
                             </td>
                         </tr>
                     @empty
@@ -94,7 +107,7 @@
             </table>
         </div>
         <nav class="space-y-3 md:space-y-0 p-4">
-            {{ $members->links() }}
+            {{ $salaries->links() }}
         </nav>
     </div>
 @endsection

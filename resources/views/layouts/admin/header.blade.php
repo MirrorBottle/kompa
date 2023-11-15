@@ -16,7 +16,7 @@
         ],
         'finance' => [
             [
-                'route' => '#',
+                'route' => route('finance.salaries.index'),
                 'icon' => 'fa-solid fa-money-bill-wave',
                 'url' => 'finance/salaries*',
                 'label' => 'Penggajian',
@@ -58,7 +58,7 @@
             [
                 'route' => route('manager.team.index'),
                 'icon' => 'fa-solid fa-users',
-                'url' => 'manager/teams*',
+                'url' => 'manager/team*',
                 'label' => 'Tim',
             ],
             [
