@@ -58,7 +58,7 @@
             [
                 'route' => route('manager.team.index'),
                 'icon' => 'fa-solid fa-users',
-                'url' => 'manager/teams*',
+                'url' => 'manager/team*',
                 'label' => 'Tim',
             ],
             [

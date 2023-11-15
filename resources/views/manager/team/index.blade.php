@@ -1,5 +1,5 @@
 @extends('layouts.admin.index')
-@section('title', 'Daftar Pengguna')
+@section('title', 'Tim')
 @section('content')
     <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden p-2">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
@@ -65,7 +65,7 @@
                                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
                                             aria-labelledby="{{ $member->id }}-button">
                                             <li>
-                                                <a href=""
+                                                <a href="{{ route("manager.user-commission-rates.index", $member->user_id) }}"
                                                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rencana Komisi</a>
                                             </li>
                                             <li>

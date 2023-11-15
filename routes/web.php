@@ -21,7 +21,7 @@ use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Models\UserCommissionRate;
 
-use App\Http\Controllers\Finance\UserCommissionRateController as ManagerUserCommissionRateController;
+use App\Http\Controllers\Manager\UserCommissionRateController as ManagerUserCommissionRateController;
 
 
 /*
@@ -94,15 +94,6 @@ Route::middleware('auth')->group(function () {
         )->name('dashboard');
         Route::resource('customers', CustomerController::class);
         Route::resource('sales', SalesController::class);
-    });
-
-    Route::group(['namespace' => 'Manager', 'prefix' => 'manager', 'as' => 'manager.', 'middleware' => 'role:manager'], function () {
-        Route::get(
-            '/dashboard',
-            'DashboardController@index'
-        )->name('dashboard');
-        // Route::resource('manager', ManagerController::class);
-        Route::get('/pegawai', [ManagerController::class, 'index']);
     });
 
     Route::group(['prefix' => 'company', 'as' => 'company.'], function () {
