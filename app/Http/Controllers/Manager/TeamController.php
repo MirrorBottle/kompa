@@ -16,6 +16,6 @@ class TeamController extends Controller
                 ->where('user_id', '!=', auth()->user()->id)
                 ->paginate(6);
         }
-        return view("manager.team.index");
+        return view("manager.team.index", compact('members'));
     }
 }
