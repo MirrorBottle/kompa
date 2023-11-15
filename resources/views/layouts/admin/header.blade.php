@@ -8,9 +8,29 @@
                 'label' => 'Tim',
             ],
             [
-                'route' => route('admin.commission-rates.index'),
+                'route' => route('finance.commission-rates.index'),
                 'icon' => 'fa-solid fa-percent',
                 'url' => 'admin/commission-rates*',
+                'label' => 'Komisi',
+            ],
+        ],
+        'finance' => [
+            [
+                'route' => '#',
+                'icon' => 'fa-solid fa-money-bill-wave',
+                'url' => 'finance/salaries*',
+                'label' => 'Penggajian',
+            ],
+            [
+                'route' => '#',
+                'icon' => 'fa-solid fa-book-bookmark',
+                'url' => 'finance/book-balances*',
+                'label' => 'Pembukuan',
+            ],
+            [
+                'route' => route('finance.commission-rates.index'),
+                'icon' => 'fa-solid fa-percent',
+                'url' => 'finance/commission-rates*',
                 'label' => 'Komisi',
             ],
         ],

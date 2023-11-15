@@ -13,9 +13,10 @@ class CommissionRateController extends Controller
      */
     public function index()
     {
+        $role = auth()->user()->role_name;
         $commissions = CommissionRate::where("company_id", auth()->user()->company_id)
             ->paginate(6);
-        return view("admin.commission-rates.index", compact('commissions'));
+        return view("admin.commission-rates.index", compact('commissions', 'role'));
     }
 
     /**
@@ -23,7 +24,8 @@ class CommissionRateController extends Controller
      */
     public function create()
     {
-        return view("admin.commission-rates.create");
+        $role = auth()->user()->role_name;
+        return view("admin.commission-rates.create", compact('role'));
     }
 
     /**
@@ -32,7 +34,8 @@ class CommissionRateController extends Controller
     public function store(Request $request)
     {
         $commission = CommissionRate::create($request->toArray());
-        return redirect()->route('admin.commission-rates.index')->with('success','Data persentase komisi berhasil dibuat!');
+        $role = auth()->user()->role_name;
+        return redirect()->route("$role.commission-rates.index")->with('success','Data persentase komisi berhasil dibuat!');
     }
 
     /**
@@ -49,7 +52,8 @@ class CommissionRateController extends Controller
     public function edit(int $id)
     {
         $commission = CommissionRate::findOrFail($id);
-        return view("admin.commission-rates.edit", compact('commission'));
+        $role = auth()->user()->role_name;
+        return view("admin.commission-rates.edit", compact('commission', 'role'));
     }
 
     /**
@@ -59,7 +63,8 @@ class CommissionRateController extends Controller
     {
 
         $commission->update($request->all());
-        return redirect()->route('admin.commission-rates.index')->with('success','Data persentase komisi berhasil diubah!');
+        $role = auth()->user()->role_name;
+        return redirect()->route("$role.commission-rates.index")->with('success','Data persentase komisi berhasil diubah!');
 
     }
 
@@ -68,9 +73,10 @@ class CommissionRateController extends Controller
      */
     public function destroy($id)
     {
+        $role = auth()->user()->role_name;
         $commission = CommissionRate::findOrFail($id);
         $commission->delete();
-        return redirect()->route('admin.commission-rates.index')->with('success','Data persentase komisi berhasil dihapus!');
+        return redirect()->route("$role.commission-rates.index")->with('success','Data persentase komisi berhasil dihapus!');
 
     }
 }

@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UserCommissionRateController;
+use App\Http\Controllers\Finance\BalanceBookController;
+use App\Http\Controllers\Finance\BalanceBookItemController;
+use App\Http\Controllers\Finance\SalaryController;
 use App\Http\Controllers\User\CustomerController;
 use App\Http\Controllers\User\SalesController;
 use App\Http\Controllers\User\ProfileController;
@@ -58,8 +61,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     });
 
-    Route::group(['namespace' => 'Finance', 'prefix' => 'finance', 'as' => 'finance.', 'middleware' => 'role:finance'], function () {
-        Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::group(['prefix' => 'finance', 'as' => 'finance.', 'middleware' => 'role:finance'], function () {
+        Route::group(['namespace' => 'Finance'], function() {
+            Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+            Route::resource("salary", SalaryController::class);
+            Route::resource("balance-books", BalanceBookController::class);
+            Route::resource("balance-book-items", BalanceBookItemController::class)->except(['index', 'create']);
+            Route::get("balance-book-items/{balance_book_id}", [BalanceBookItemController::class, 'create'])->name("balance-book-items.create");
+        });
+        Route::resource("commission-rates", CommissionRateController::class);
     });
 
     // Route::group(['namespace' => 'Manager', 'prefix' => 'manager', 'as' => 'manager.', 'middleware' => 'role:manager'], function () {

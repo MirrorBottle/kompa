@@ -23,7 +23,7 @@
             </div>
             <div
                 class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                <a href="{{ route('admin.commission-rates.create') }}"
+                <a href="{{ route("$role.commission-rates.create") }}"
                     class="flex items-center justify-center text-white bg-secondary hover:bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary focus:outline-none dark:focus:ring-primary">
                     <i class="fa-solid fa-plus mr-2"></i>
                     Tambah Persentase Komisi
@@ -75,12 +75,12 @@
                                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
                                         aria-labelledby="{{ $commission->id }}-button">
                                         <li>
-                                            <a href="{{ route('admin.commission-rates.edit', $commission->id) }}"
+                                            <a href="{{ route("$role.commission-rates.edit", $commission->id) }}"
                                                 class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ubah</a>
                                         </li>
                                     </ul>
                                     <div class="py-1">
-                                        <form action="{{ route('admin.commission-rates.destroy', $commission->id) }}"
+                                        <form action="{{ route("$role.commission-rates.destroy", $commission->id) }}"
                                             method="post">
                                             @method('DELETE')
                                             @csrf

@@ -4,7 +4,7 @@
             class="mx-auto grid w-full max-w-7xl auto-cols-auto grid-cols-[auto_max-content] items-center justify-stretch gap-[0px] lg:grid-cols-[176px_auto]">
             <a href="/"
                 class="relative float-left text-[#333333] max-[991px]:mr-auto max-[767px]:pl-0">
-                <img class="h-[30px]" src="{{ asset('assets/images/logo_white.png') }}" alt="">
+                <img class="h-[50px]" src="{{ asset('assets/images/logo_white.png') }}" alt="">
             </a>
             <nav
                 class="relative float-right flex place-content-between max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:hidden max-[991px]:bg-black max-[991px]:py-1 max-[991px]:text-left">
