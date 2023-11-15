@@ -12,7 +12,7 @@ use App\Models\Customer;
 class SalesController extends Controller
 {
     public function index() {
-        $sales = Sales::where("user_id", auth()->user()->id)->paginate(10);
+        $sales = Sales::where("user_id", auth()->user()->id)->paginate(6);
         return view("user.sales.index", compact('sales'));
 
     }
