@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('manager_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('balance_book_id')->nullable();
             $table->bigInteger('base_salary');
@@ -27,11 +28,12 @@ return new class extends Migration
             $table->text('finance_note')->nullable();
             $table->date('start_date');
             $table->date('end_date');
-            $table->date('approval_date');
+            $table->date('approval_date')->nullable();
             $table->timestamps();
 
             $table->foreign('company_id')->references('id')->on('companies')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('manager_id')->references('id')->on('users')->cascadeOnDelete();
             $table->foreign('balance_book_id')->references('id')->on('balance_books')->cascadeOnDelete();
 
             $table->index(['company_id', 'user_id', 'balance_book_id']);

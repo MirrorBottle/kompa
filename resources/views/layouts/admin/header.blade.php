@@ -16,7 +16,7 @@
         ],
         'finance' => [
             [
-                'route' => '#',
+                'route' => route('finance.salaries.index'),
                 'icon' => 'fa-solid fa-money-bill-wave',
                 'url' => 'finance/salaries*',
                 'label' => 'Penggajian',
