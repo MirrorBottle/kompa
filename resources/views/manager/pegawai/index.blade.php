@@ -1,5 +1,5 @@
 @extends('layouts.admin.index')
-@section('title', 'Daftar Penjualan')
+@section('title', 'Daftar Pegawai')
 @section('content')
     <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden p-2">
         <div class="flex flex-row md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
@@ -21,41 +21,51 @@
                     </div>
                 </form>
             </div>
-            <div
-                class="w-full md:w-auto flex flex-row md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0 ">
-                <a href="{{ route('user.sales.create') }}"
-                    class="  flex items-center justify-center text-white bg-secondary hover:bg-primary focus:ring-4 focus:ring-primary font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary focus:outline-none dark:focus:ring-primary">
-                    <i class="fa-solid fa-plus mr-2"></i>
-                    Tambah Penjualan
-                </a>
-            </div>
         </div>
+    @if (auth()->user()->team)
+        @php
+            $team = auth()->user()->team;
+        @endphp
         <div class="overflow-x-auto">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="px-4 py-3">Tanggal Penjualan</th>
-                        <th scope="col" class="px-4 py-3">Nama Pelanggan</th>
-                        <th scope="col" class="px-4 py-3">Jumlah Penjualan</th>
-                        <th scope="col" class="px-4 py-3">
-                            <span class="sr-only">Aksi</span>
-                        </th>
-                    </tr>
-                </thead>
+            <caption
+                class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                {{ $team->name }}
+            </caption>
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Nama
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Email
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        No. HP
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Jabatan
+                    </th>
+                </tr>
+            </thead>
                 <tbody>
-                    @forelse ($sales as $sale)
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row" class="px-4 py-3 font-medium text-gray-900">
-                                {{ $sale->sale_date->format("d/m/Y") }}
+                    @foreach ($team->members as $member)
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $member->name }}
                             </th>
-                            <td class="px-4 py-3">
-                                {{ $sale->customer->name }}
+                            <td class="px-6 py-4">
+                                {{ $member->email }}
                             </td>
-                            <td class="px-4 py-3">
-                                {{ $sale->sale_amount }}
+                            <td class="px-6 py-4">
+                                {{ $member->phone_number }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {!! $member->role_name_badge !!}
                             </td>
                             <td class="px-4 py-3 flex items-center justify-end">
-                                <button id="{{ $sale->id }}-button" data-dropdown-toggle="{{ $sale->id }}"
+                                <button id="{{ $member->id }}-button" data-dropdown-toggle="{{ $member->id }}"
                                     data-dropdown-placement="top"
                                     class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
                                     type="button">
@@ -65,25 +75,15 @@
                                             d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                     </svg>
                                 </button>
-                                <div id="{{ $sale->id }}"
+                                <div id="{{ $member->id }}"
                                     class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="">
                                         <li>
-                                            <a href="{{ route('user.sales.edit', $sale->id) }}"
-                                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ubah</a>
+                                            <a href=""
+                                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Penggajian</a>
                                         </li>
                                     </ul>
-                                    <div class="py-1">
-                                        <form action="{{ route('user.sales.destroy', $sale->id) }}" method="post">
-                                            @method('DELETE')
-                                            @csrf
-                                            <button type="submit"
-                                                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                                                onclick="return confirm('Are you sure want to delete?')">
-                                                Hapus
-                                            </button>
-                                        </form>
-                                    </div>
+
                                 </div>
                             </td>
                         </tr>
@@ -102,13 +102,15 @@
                                 </div>
                             </th>
                         </tr>
-                    @endforelse
+                    @endforeach
 
                 </tbody>
             </table>
         </div>
+        @endif
         <nav class="space-y-3 md:space-y-0 p-4">
-            {{ $sales->links() }}
+            {{ $team->members->links() }}
         </nav>
     </div>
+
 @endsection
