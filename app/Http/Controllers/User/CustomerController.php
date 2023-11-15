@@ -10,7 +10,7 @@ use App\Models\Customer;
 class CustomerController extends Controller
 {
     public function index() {
-        $customers = Customer::where("company_id", auth()->user()->company_id)->paginate(10);
+        $customers = Customer::where("company_id", auth()->user()->company_id)->paginate(6);
         return view("user.customers.index", compact('customers'));
 
     }

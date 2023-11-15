@@ -14,10 +14,10 @@ class TeamMemberSeeder extends Seeder
     public function run(): void
     {
         $teams = [
-            range(6, 8),
-            range(9, 11),
-            range(16, 18),
-            range(19, 21)
+            array_merge([4], range(6, 8)),
+            array_merge([5], range(9, 11)),
+            array_merge([14], range(16, 18)),
+            array_merge([15], range(19, 21))
         ];
 
         foreach ($teams as $team_key => $team) {

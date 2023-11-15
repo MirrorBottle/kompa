@@ -45,13 +45,27 @@
                 'route' => route('user.customers.index'),
                 'icon' => 'fa-solid fa-user-tag',
                 'url' => 'user/customers*',
-                'label' => 'Pelanggan'
+                'label' => 'Pelanggan',
             ],
             [
                 'route' => '#',
                 'icon' => 'fa-solid fa-money-bill',
                 'url' => 'user/customers',
-                'label' => 'Histori Gaji'
+                'label' => 'Histori Gaji',
+            ],
+        ],
+        'manager' => [
+            [
+                'route' => route('manager.team.index'),
+                'icon' => 'fa-solid fa-users',
+                'url' => 'manager/teams*',
+                'label' => 'Tim',
+            ],
+            [
+                'route' => '',
+                'icon' => 'fa-solid fa-money-bill-wave',
+                'url' => 'manager/salaries*',
+                'label' => 'Penggajian',
             ],
         ],
     ];
@@ -60,7 +74,7 @@
 
     $links = $links[auth()->user()->role_name];
 
-    $dashboard_url = auth()->user()->role_name . "/dashboard";
+    $dashboard_url = auth()->user()->role_name . '/dashboard';
 @endphp
 <header>
     <nav class="fixed z-30 w-full bg-white border-b border-gray-300 dark:bg-gray-800 dark:border-gray-700 py-3 px-4">
@@ -73,8 +87,8 @@
                 <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
                     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
                         <li class="mr-2">
-                            <a href="/{{$dashboard_url}}"
-                                class="inline-flex items-center justify-center p-4 {{ Request::is($dashboard_url) ? 'border-primary text-primary border-b-2' : 'hover:text-gray-600 hover:border-gray-300'}} rounded-t-lg active"
+                            <a href="/{{ $dashboard_url }}"
+                                class="inline-flex items-center justify-center p-4 {{ Request::is($dashboard_url) ? 'border-primary text-primary border-b-2' : 'hover:text-gray-600 hover:border-gray-300' }} rounded-t-lg active"
                                 aria-current="page">
                                 <i class="fa-solid fa-chart-simple mr-2"></i>
                                 <span>Dashboard</span>
@@ -120,16 +134,16 @@
                             </li>
                         @endrole --}}
                         @foreach ($links as $link)
-                        @php
-                            $url = $link['url']
-                        @endphp
-                        <li class="mr-2">
-                            <a href="{{ $link['route'] }}"
-                                class="inline-flex items-center justify-center p-4 rounded-t-lg group {{ Request::is($url) ? ' border-b-2 border-primary text-primary' : 'hover:text-gray-600 hover:border-gray-300'}}">
-                                <i class="{{ $link['icon'] }} mr-2"></i>
-                                <span>{{ $link['label'] }}</span>
-                            </a>
-                        </li>
+                            @php
+                                $url = $link['url'];
+                            @endphp
+                            <li class="mr-2">
+                                <a href="{{ $link['route'] }}"
+                                    class="inline-flex items-center justify-center p-4 rounded-t-lg group {{ Request::is($url) ? ' border-b-2 border-primary text-primary' : 'hover:text-gray-600 hover:border-gray-300' }}">
+                                    <i class="{{ $link['icon'] }} mr-2"></i>
+                                    <span>{{ $link['label'] }}</span>
+                                </a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -157,7 +171,7 @@
                         </p>
                     </div>
                     <div class="grid grid-cols-3 gap-4 p-4">
-                        <a href="{{ route("user.profile") }}"
+                        <a href="{{ route('user.profile') }}"
                             class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                             <i class="fa-solid fa-user-tie fa-2x text-gray-400 mb-1"></i>
                             <div class="text-sm text-gray-900 dark:text-white">Profil</div>
