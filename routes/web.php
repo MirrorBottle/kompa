@@ -20,6 +20,8 @@ use App\Http\Controllers\User\SalesController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Manager\SalaryController as ManagerSalaryController;
+use App\Http\Controllers\User\SalaryController as UserSalaryController;
+
 
 
 use App\Models\UserCommissionRate;
@@ -55,6 +57,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/user/profile', [ProfileController::class, 'index'])->name('user.profile');
     Route::put('/user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
+    // Route::put('/user/profile', [ProfileController::class, 'changePass'])->name('user.profile.changePass');
+
 
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'role:admin'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
@@ -69,6 +73,7 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['namespace' => 'Master', 'prefix' => 'master', 'as' => 'master.', 'middleware' => 'role:master'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
     });
 
     Route::group(['prefix' => 'finance', 'as' => 'finance.', 'middleware' => 'role:finance'], function () {
@@ -91,6 +96,11 @@ Route::middleware('auth')->group(function () {
         // Route::resource("salaries", ManagerSalaryController::class)->except(['create']);
         Route::get('sales/create/{user_id}', [ManagerSalaryController::class, 'create'])->name("sales.create");
         Route::post('sales/create/action', [ManagerSalaryController::class, 'store'])->name("sales.store");
+        Route::get('/salary', [ManagerSalaryController::class, 'show'])->name("salary.show");
+        Route::get('/salary/edit/{id}', [ManagerSalaryController::class, 'edit'])->name("salary.edit");
+        Route::post('/salary/edit/action/{id}', [ManagerSalaryController::class, 'update'])->name("salary.update");
+
+
         // Route::get('/sales/create/action', 'SalaryController@store')->name('sales.store');
 
 
@@ -108,6 +118,7 @@ Route::middleware('auth')->group(function () {
         )->name('dashboard');
         Route::resource('customers', CustomerController::class);
         Route::resource('sales', SalesController::class);
+        Route::resource('salary', UserSalaryController::class);
     });
 
     Route::group(['prefix' => 'company', 'as' => 'company.'], function () {

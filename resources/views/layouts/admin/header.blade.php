@@ -48,7 +48,7 @@
                 'label' => 'Pelanggan',
             ],
             [
-                'route' => '#',
+                'route' => route('user.salary.index'),
                 'icon' => 'fa-solid fa-money-bill',
                 'url' => 'user/customers',
                 'label' => 'Histori Gaji',
@@ -62,7 +62,7 @@
                 'label' => 'Tim',
             ],
             [
-                'route' => '',
+                'route' => route('manager.salary.show'),
                 'icon' => 'fa-solid fa-money-bill-wave',
                 'url' => 'manager/salaries*',
                 'label' => 'Penggajian',

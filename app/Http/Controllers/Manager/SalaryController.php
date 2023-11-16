@@ -15,7 +15,7 @@ class SalaryController extends Controller
 {
     public function create($user_id, Request $request)
     {
-        $user = User::findOrFail( $user_id);
+        $user = User::findOrFail($user_id);
         $sales = Sales::where("user_id", $user_id)->where("salary_id", null)->get();
         $komisi = 0;
         foreach ($sales as $sale) {
@@ -39,6 +39,33 @@ class SalaryController extends Controller
 
         return redirect()->route('manager.team.index');
     }
+
+    public function show()
+    {
+        $salary = Salary::where("manager_id", auth()->user()->id)->paginate(10);
+        // dd($salary->user->commission->name);
+
+        return view("manager.salary.show", compact('salary' ));
+    }
+
+    public function edit($id)
+    {
+        $salary = Salary::where("id", $id)->first();
+        $user = User::findOrFail($salary->user_id);
+        $sales = Sales::where("salary_id", $id)->get();
+        return view("manager.salary.edit", compact('salary','sales','user' ));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $salary = Salary::where("id", $id)->first();
+        $salary->update($request->all());
+        return redirect()->route('manager.salary.show')->with('success','Data penggajian berhasil diubah!');
+
+    }
+
+
+
 
 
 

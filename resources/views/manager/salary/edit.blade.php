@@ -1,32 +1,30 @@
 @extends('layouts.admin.index')
-@section('title', 'Penggajian')
+@section('title', 'Ubah Penggajian')
 @section('content')
 
 
-<form action="{{ route('manager.sales.store')}}" method="post">
+<form action="{{ route('manager.salary.update', $salary->id)}}" method="post">
     <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden p-2">
         @csrf
-        <input type="hidden" name="company_id" id="company_id" value="{{ $user->company_id }}">
-        <input type="hidden" name="balance_book_id" id="balance_book_id" value="{{ null }}">
+        <input type="hidden" name="company_id" id="company_id" value="{{ $salary->company_id }}">
+        <input type="hidden" name="balance_book_id" id="balance_book_id" value="{{ $salary->balance_book_id }}">
         <input type="hidden" name="manager_id" id="manager_id" value="{{ auth()->user()->id }}">
-        <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
-        <input type="hidden" name="approval_date" id="approval_date" value="{{null}}">
-        <input type="hidden" name="finance_note" id="finance_note" value="{{ null }}">
-        <input type="hidden" name="commission_rate" id="commission_rate" value="{{ $user->commission->name }}">
+        <input type="hidden" name="user_id" id="user_id" value="{{ $salary->id }}">
+        <input type="hidden" name="approval_date" id="approval_date" value="{{ $salary->approval_date}}">
+        <input type="hidden" name="finance_note" id="finance_note" value="{{  $salary->finance_note }}">
+        <input type="hidden" name="commission_rate" id="commission_rate" value="{{ $salary->commission_rate }}">
 
         {{-- <input type="hidden" name="status" id="status" value="{{$nilaiDefault ? 2 : 1}}"> --}}
 
         <div class="py-4">
             <label  class="form-label">Nama</label>
-            <input type="text" name="name" id="name" class="form-input" readonly value="{{$user->name}} " required>
-
-
+            <input type="text" name="name" id="name" class="form-input" readonly value="{{$salary->name}} " required>
         </div>
         <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 py-4">
 
             <div>
                 <label  class="form-label">Gaji Pokok</label>
-                <input type="text" name="base_salary" id="base_salary" class="form-input" readonly value="{{$user->base_salary}}" required>
+                <input type="text" name="base_salary" id="base_salary" class="form-input" readonly value="{{$salary->base_salary}}" required>
             </div>
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div>
@@ -35,7 +33,7 @@
                 </div>
                 <div>
                     <label  class="form-label">Komisi</label>
-                    <input type="text" name="commission_amount" id="commission_amount" class="form-input"  value="{{$totalKomisi}}" required>
+                    <input type="text" name="commission_amount" id="commission_amount" class="form-input"  value="{{$salary->commission_amount}}" required>
                 </div>
             </div>
             <div>
@@ -103,12 +101,12 @@
         </div>
         <div class="py-4">
             <label  class="form-label">Total Gaji</label>
-            <input type="text" name="" id="" class="form-input" readonly value="{{$totalKomisi + $user->base_salary }}" required>
+            <input type="text" name="" id="" class="form-input" readonly value="{{$salary->commission_amount + $salary->base_salary }}" required>
         </div>
 
 
     <div class="flex justify-between mt-5">
-        <a class="btn-secondary" href="{{ route('manager.team.index')}}">
+        <a class="btn-secondary" href="{{ route('manager.salary.show')}}">
             <i class="fa-solid fa-chevron-left mr-2"></i>
             Kembali
         </a>
