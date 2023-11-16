@@ -21,6 +21,7 @@ use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Manager\ManagerController;
 use App\Http\Controllers\Manager\SalaryController as ManagerSalaryController;
 
+
 use App\Models\UserCommissionRate;
 
 use App\Http\Controllers\Manager\UserCommissionRateController as ManagerUserCommissionRateController;
@@ -87,8 +88,17 @@ Route::middleware('auth')->group(function () {
         Route::resource("user-commission-rates", ManagerUserCommissionRateController::class)->except(['index', 'create', 'show']);
         Route::get('user-commission-rates/{user_id}', [ManagerUserCommissionRateController::class, 'index'])->name("user-commission-rates.index");
         Route::get('user-commission-rates/create/{user_id}', [ManagerUserCommissionRateController::class, 'create'])->name("user-commission-rates.create");
-
+        // Route::resource("salaries", ManagerSalaryController::class)->except(['create']);
         Route::get('sales/create/{user_id}', [ManagerSalaryController::class, 'create'])->name("sales.create");
+        Route::post('sales/create/action', [ManagerSalaryController::class, 'store'])->name("sales.store");
+        // Route::get('/sales/create/action', 'SalaryController@store')->name('sales.store');
+
+
+
+
+
+
+
     });
 
     Route::group(['namespace' => 'User', 'prefix' => 'user', 'as' => 'user.', 'middleware' => 'role:user'], function () {

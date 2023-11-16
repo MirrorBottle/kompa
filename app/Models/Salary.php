@@ -24,11 +24,14 @@ class Salary extends Model
         });
     }
 
-    public $casts = [
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'approval_date' => 'data'
-    ];
+    protected $table = 'salaries';
+    protected $fillable = ['name','company_id', 'manager_id', 'user_id', 'balance_book_id','base_salary','commission_rate','commission_amount','status','manager_note','finance_note', 'start_date','end_date','approval_date'];
+
+    // public $casts = [
+    //     'start_date' => 'date',
+    //     'end_date' => 'date',
+    //     'approval_date' => 'data'
+    // ];
 
     // * RELATIONSHIP
 
