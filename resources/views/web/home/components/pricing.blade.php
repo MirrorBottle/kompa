@@ -1,4 +1,4 @@
-<div class="relative bg-neutral">
+<div class="relative bg-neutral" id="pricing">
     <div class="px-5 md:px-10">
         <div class="mx-auto w-full max-w-7xl">
             <div class="py-16 md:py-24 lg:py-32">

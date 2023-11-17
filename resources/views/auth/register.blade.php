@@ -56,7 +56,7 @@
         <button type="submit"
             class="w-full text-white bg-secondary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-secondary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Daftar</button>
         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-            Sudah punya akun? <a href="/register"
+            Sudah punya akun? <a href="/login"
                 class="font-medium text-secondary hover:underline dark:text-secondary-500">Masuk Di sini</a>
         </p>
     </form>

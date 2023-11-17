@@ -1,4 +1,4 @@
-<section class="relative block bg-primary">
+<section class="relative block bg-primary" id="how-it-works">
     <img src="https://assets.website-files.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28f9_How%20It%20Works%20BG.svg"
         alt="" class="absolute inset-[0%] -z-[1] inline-block h-full w-full max-w-full object-cover">
     <div class="px-5 md:px-10">
