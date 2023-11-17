@@ -17,7 +17,7 @@
         </select>
     </div>
     <div>
-        <label  class="form-label">Jumlah penjualan</label>
+        <label  class="form-label">Jumlah penjualan (Rp.)</label>
         <input type="text" name="sale_amount" id="sale_amount" class="form-input" value="{{ isset($data) ? $data->sale_amount : '' }}" required>
     </div>
 

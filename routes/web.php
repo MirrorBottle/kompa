@@ -94,8 +94,8 @@ Route::middleware('auth')->group(function () {
         Route::get('user-commission-rates/{user_id}', [ManagerUserCommissionRateController::class, 'index'])->name("user-commission-rates.index");
         Route::get('user-commission-rates/create/{user_id}', [ManagerUserCommissionRateController::class, 'create'])->name("user-commission-rates.create");
         // Route::resource("salaries", ManagerSalaryController::class)->except(['create']);
-        Route::get('sales/create/{user_id}', [ManagerSalaryController::class, 'create'])->name("sales.create");
-        Route::post('sales/create/action', [ManagerSalaryController::class, 'store'])->name("sales.store");
+        Route::get('salary/create/{user_id}', [ManagerSalaryController::class, 'create'])->name("salary.create");
+        Route::post('salary/create/action', [ManagerSalaryController::class, 'store'])->name("salary.store");
         Route::get('/salary', [ManagerSalaryController::class, 'show'])->name("salary.show");
         Route::get('/salary/edit/{id}', [ManagerSalaryController::class, 'edit'])->name("salary.edit");
         Route::post('/salary/edit/action/{id}', [ManagerSalaryController::class, 'update'])->name("salary.update");

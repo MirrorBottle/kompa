@@ -14,26 +14,26 @@
                 'label' => 'Komisi',
             ],
         ],
-        // 'finance' => [
-        //     [
-        //         'route' => route('finance.salaries.index'),
-        //         'icon' => 'fa-solid fa-money-bill-wave',
-        //         'url' => 'finance/salaries*',
-        //         'label' => 'Penggajian',
-        //     ],
-        //     [
-        //         'route' => '#',
-        //         'icon' => 'fa-solid fa-book-bookmark',
-        //         'url' => 'finance/book-balances*',
-        //         'label' => 'Pembukuan',
-        //     ],
-        //     [
-        //         'route' => route('finance.commission-rates.index'),
-        //         'icon' => 'fa-solid fa-percent',
-        //         'url' => 'finance/commission-rates*',
-        //         'label' => 'Komisi',
-        //     ],
-        // ],
+        'finance' => [
+            [
+                'route' => route('finance.salaries.index'),
+                'icon' => 'fa-solid fa-money-bill-wave',
+                'url' => 'finance/salaries*',
+                'label' => 'Penggajian',
+            ],
+            [
+                'route' => '#',
+                'icon' => 'fa-solid fa-book-bookmark',
+                'url' => 'finance/book-balances*',
+                'label' => 'Pembukuan',
+            ],
+            [
+                'route' => route('finance.commission-rates.index'),
+                'icon' => 'fa-solid fa-percent',
+                'url' => 'finance/commission-rates*',
+                'label' => 'Komisi',
+            ],
+        ],
         'user' => [
             [
                 'route' => route('user.sales.index'),
@@ -50,7 +50,7 @@
             [
                 'route' => route('user.salary.index'),
                 'icon' => 'fa-solid fa-money-bill',
-                'url' => 'user/customers',
+                'url' => 'user/salary*',
                 'label' => 'Histori Gaji',
             ],
         ],
@@ -64,7 +64,7 @@
             [
                 'route' => route('manager.salary.show'),
                 'icon' => 'fa-solid fa-money-bill-wave',
-                'url' => 'manager/salaries*',
+                'url' => 'manager/salary*',
                 'label' => 'Penggajian',
             ],
         ],
@@ -181,7 +181,7 @@
                             <i class="fa-solid fa-building fa-2x text-gray-400 mb-1"></i>
                             <div class="text-sm text-gray-900 dark:text-white">Perusahaan</div>
                         </a>
-                        @role(['admin', 'finance', 'manager'])
+                        @role(['admin'])
                             <a href="#"
                                 class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group">
                                 <i class="fa-solid fa-user-tag fa-2x text-gray-400 mb-1"></i>

@@ -12,14 +12,14 @@ use App\Models\Customer;
 class SalesController extends Controller
 {
     public function index() {
-        $sales = Sales::where("user_id", auth()->user()->id)->paginate(6);
+        $sales = Sales::where("user_id", auth()->user()->id)->orderBy('id', 'desc')->paginate(6);
         return view("user.sales.index", compact('sales'));
 
     }
 
     public function create()
     {
-        $customers = Customer::all();
+        $customers = Customer::where("company_id", auth()->user()->company_id)->get();
         return view("user.sales.create", compact('customers'));
     }
 
@@ -34,7 +34,7 @@ class SalesController extends Controller
 
     public function edit(Sales $sale)
     {
-        $customers = Customer::all();
+        $customers = Customer::where("company_id", auth()->user()->company_id)->get();
         return view("user.sales.edit", compact('sale','customers' ));
     }
 

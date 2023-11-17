@@ -27,8 +27,8 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-4 py-3">Status</th>
-                        <th scope="col" class="px-4 py-3">Nama Manager</th>
-                        <th scope="col" class="px-4 py-3">Nama Pegawai</th>
+                        <th scope="col" class="px-4 py-3">Manager</th>
+                        <th scope="col" class="px-4 py-3">Pegawai</th>
                         <th scope="col" class="px-4 py-3">Tgl</th>
                         <th scope="col" class="px-4 py-3">Komisi</th>
                         <th scope="col" class="px-4 py-3">Total</th>
@@ -43,6 +43,9 @@
                             <th scope="row" class="px-4 py-3 font-medium text-gray-900">
                                 {!! $salary->status_name_badge !!}
                             </th>
+                            <td class="px-4 py-3">
+                                {{ $salary->manager->name }}
+                            </td>
                             <td class="px-4 py-3">
                                 {{ $salary->user->name }}
                             </td>

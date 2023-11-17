@@ -52,7 +52,7 @@
                                 {{ $sale->customer->name }}
                             </td>
                             <td class="px-4 py-3">
-                                {{ $sale->sale_amount }}
+                                {{ helperFormatCurrency($sale->sale_amount) }}
                             </td>
                             <td class="px-4 py-3 flex items-center justify-end">
                                 <button id="{{ $sale->id }}-button" data-dropdown-toggle="{{ $sale->id }}"

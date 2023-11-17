@@ -24,7 +24,7 @@ class SalaryController extends Controller
      */
     public function show(Salary $salary)
     {
-        //
+        return view("finance.salaries.show", compact('salary'));
     }
 
     /**
@@ -32,7 +32,13 @@ class SalaryController extends Controller
      */
     public function update(Request $request, Salary $salary)
     {
-        //
+        $salary->update([
+            "status" => $request->status,
+            "finance_note" => $request->finance_note
+        ]);
+
+        return redirect()->route('finance.salaries.index')->with('success','Status data penggajian berhasil diubah!');
+
     }
 
     /**

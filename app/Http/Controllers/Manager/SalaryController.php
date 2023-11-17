@@ -28,16 +28,17 @@ class SalaryController extends Controller
 
     public function store(Request $request)
     {
-        $salaries = Salary::create($request->all());
+        $salaries = Salary::create($request->merge([
+            "base_salary" => helperParseCurrency($request->base_salary)
+        ])->all());
         // dd($salaries->user_id);
-
         $sales = Sales::where("user_id", $salaries->user_id)->where("salary_id", null)->update([
             'salary_id' => $salaries->id,
             // tambahkan field lain yang ingin diupdate
         ]);
 
 
-        return redirect()->route('manager.team.index');
+        return redirect()->route('manager.salary.show')->with('success','Data penggajian berhasil ditambahkan!');
     }
 
     public function show()
@@ -63,12 +64,5 @@ class SalaryController extends Controller
         return redirect()->route('manager.salary.show')->with('success','Data penggajian berhasil diubah!');
 
     }
-
-
-
-
-
-
-
 
 }
