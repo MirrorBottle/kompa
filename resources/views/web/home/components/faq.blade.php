@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="mb-4 w-full max-w-[640px] overflow-hidden lg:max-w-[960px]">
-                                <p class="text-[#e6e6e6]">Kompa adalah perangkat lunak yang dirancang untuk memudahkan manajemen risiko dan keamanan di industri pertambangan. Ini membantu dalam membuat laporan HIRAC, memantau risiko secara real-time, dan banyak lagi.</p>
+                                <p class="text-[#e6e6e6]">Kompa adalah perangkat lunak yang dirancang untuk memudahkan pengelolaan data perusahaan. Ini memantau risiko secara real-time, dan banyak lagi.</p>
                             </div>
                         </div>
                         <div class="mb-6 w-full overflow-hidden rounded-xl border border-secondary bg-secondary p-8">
