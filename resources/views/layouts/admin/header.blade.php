@@ -22,7 +22,7 @@
                 'label' => 'Penggajian',
             ],
             [
-                'route' => '#',
+                'route' => route('finance.balance-books.index'),
                 'icon' => 'fa-solid fa-book-bookmark',
                 'url' => 'finance/book-balances*',
                 'label' => 'Pembukuan',

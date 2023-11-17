@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Finance;
 
 use App\Http\Controllers\Controller;
 use App\Models\BalanceBook;
+use App\Models\Salary;
+use App\Models\Sales;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BalanceBookController extends Controller
@@ -13,7 +16,10 @@ class BalanceBookController extends Controller
      */
     public function index()
     {
-        //
+        $books = BalanceBook::orderBy('created_at', 'desc')
+            ->paginate(6);
+
+        return view("finance.balance-books.index", compact('books'));
     }
 
     /**
@@ -21,7 +27,7 @@ class BalanceBookController extends Controller
      */
     public function create()
     {
-        //
+        return view("finance.balance-books.create");
     }
 
     /**
@@ -29,7 +35,14 @@ class BalanceBookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = "PEMBUKUAN " . Carbon::parse($request->start_date)->format("d/m") . " ~ " . Carbon::parse($request->end_date)->format("d/m");
+        $book = BalanceBook::create([
+            "company_id" => $request->company_id,
+            "start_date" => $request->start_date,
+            "end_date" => $request->end_date,
+            "name" => $name,
+        ]);
+        return redirect()->route('finance.balance-books.edit', $book->id)->with('success','Data pembukuan berhasil dibuat!');
     }
 
     /**
@@ -45,7 +58,12 @@ class BalanceBookController extends Controller
      */
     public function edit(BalanceBook $balanceBook)
     {
-        //
+        $salaries = Salary::whereBetween("start_date", [$balanceBook->start_date, $balanceBook->end_date])
+            ->where("status", Salary::STATUS_FINANCE_APPROVED)
+            ->get();
+        $sales = Sales::whereBetween("sale_date", [$balanceBook->start_date, $balanceBook->end_date])
+            ->get();
+        return view("");
     }
 
     /**

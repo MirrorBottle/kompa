@@ -30,7 +30,7 @@ class Salary extends Model
     public $casts = [
         'start_date' => 'date',
         'end_date' => 'date',
-        'approval_date' => 'data'
+        'approval_date' => 'date'
     ];
 
     // * RELATIONSHIP
