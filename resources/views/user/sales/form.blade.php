@@ -5,7 +5,7 @@
     <input type="hidden" name="salary_id" id="salary_id" value={{null}}>
     <div>
         <label  class="form-label">Tanggal</label>
-        <input type="date" name="sale_date" id="sale_date" class="form-input" value="{{ isset($data) ? $data->sale_date : '' }}" required>
+        <input type="date" name="sale_date" id="sale_date" class="form-input" value="{{ isset($data) ? $data->sale_date->format('Y-m-d') : '' }}" required>
     </div>
     <div>
         <label  class="form-label">Nama Pelanggan</label>
@@ -17,8 +17,8 @@
         </select>
     </div>
     <div>
-        <label  class="form-label">Jumlah penjualan (Rp.)</label>
-        <input type="text" name="sale_amount" id="sale_amount" class="form-input" value="{{ isset($data) ? $data->sale_amount : '' }}" required>
+        <label  class="form-label">Jumlah penjualan</label>
+        <input type="text" name="sale_amount" id="sale_amount" class="form-input" value="{{ isset($data) ? helperFormatCurrency($data->sale_amount) : '' }}" required>
     </div>
 
 </div>

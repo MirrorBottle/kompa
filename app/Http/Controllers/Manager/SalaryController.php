@@ -43,7 +43,8 @@ class SalaryController extends Controller
 
     public function show()
     {
-        $salary = Salary::where("manager_id", auth()->user()->id)->paginate(10);
+        $salary = Salary::where("manager_id", auth()->user()->id)->paginate(6);
+        // dd($salary);
         // dd($salary->user->commission->name);
 
         return view("manager.salary.show", compact('salary' ));
@@ -60,9 +61,17 @@ class SalaryController extends Controller
     public function update(Request $request, $id)
     {
         $salary = Salary::where("id", $id)->first();
-        $salary->update($request->all());
+        $salary->update([
+            "status" => $request->status,
+            "commission_amount" => helperParseCurrency($request->commission_amount),
+            "manager_note" => $request->manager_note,
+            "end_date" => $request->end_date,
+            "start_date" => $request->start_date
+        ] );
         return redirect()->route('manager.salary.show')->with('success','Data penggajian berhasil diubah!');
 
     }
+
+
 
 }
