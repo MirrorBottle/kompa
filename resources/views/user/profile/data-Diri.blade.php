@@ -1,6 +1,7 @@
 <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="dataDiri" role="tabpanel" aria-labelledby="dataDiri-tab">
     <form action="{{ route('user.profile.update') }}" method="post">
-        @method('PUT')
+
+        @csrf
         <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <input type="hidden" name="company_id" id="company_id" value="{{ auth()->user()->company_id }}">
             <div>
@@ -23,6 +24,13 @@
                 <label  class="form-label">Email</label>
                 <input type="email" name="email" id="email" class="form-input" disabled value="{{ auth()->user()->email}}">
             </div>
+        </div>
+        <div class="flex justify-end mt-5">
+            <button type="submit"
+                class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-primary rounded-lg focus:ring-4 focus:ring-primary dark:focus:ring-primary hover:bg-primary">
+                <i class="fa-solid fa-floppy-disk mr-2"></i>
+                Simpan Data
+            </button>
         </div>
     </form>
 </div>

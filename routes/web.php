@@ -56,8 +56,8 @@ Route::controller(AuthController::class)->group(function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/user/profile', [ProfileController::class, 'index'])->name('user.profile');
-    Route::put('/user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
-    // Route::put('/user/profile', [ProfileController::class, 'changePass'])->name('user.profile.changePass');
+    Route::post('/user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
+    Route::post('/user/profile/changePass', [ProfileController::class, 'changePass'])->name('user.changePass');
 
 
     Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'role:admin'], function () {

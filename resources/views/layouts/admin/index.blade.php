@@ -49,6 +49,21 @@
                     </button>
                 </div>
             @endif
+            @if (session('error'))
+                <div id="alert-border-3"
+                    class="flex items-center p-4 mb-4 text-red-600 border-t-4 border-red-200 bg-red-50 dark:text-red-400 dark:bg-gray-800 dark:border-red-800"
+                    role="alert">
+                    <div class="ml-3 text-sm font-medium">
+                        {{ session('error') }}
+                    </div>
+                    <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+                        data-dismiss-target="#alert-border-3" aria-label="Close">
+                        <span class="sr-only">Dismiss</span>
+                        <i class="fa-solid fa-close"></i>
+                    </button>
+                </div>
+            @endif
             <div class="min-h-screen p-4">
                 @yield('content')
             </div>
