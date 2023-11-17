@@ -1,4 +1,4 @@
-<section class="relative bg-neutral">
+<section class="relative bg-neutral" id="feat">
     <div class="px-5 md:px-10">
         <div class="mx-auto w-full max-w-7xl">
             <div class="flex-col flex gap-y-20 max-[479px]:gap-[60px] items-center lg:items-center py-20 lg:py-24">

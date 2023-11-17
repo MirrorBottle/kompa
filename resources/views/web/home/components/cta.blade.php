@@ -1,4 +1,4 @@
-<section class="relative block bg-primary">
+<section class="relative block bg-primary" id="cta">
     <div class="px-5 md:px-10">
         <div class="py-16 md:py-24 lg:py-32">
             <div class="mx-auto w-full max-w-7xl rounded-[60px] bg-neutral px-4">

@@ -12,14 +12,12 @@
                     <div class="relative z-[900] mx-auto inline-block text-left max-[991px]:w-full">&lt;</div>
                     <a href="/"
                         class="px-5 py-2 text-white transition hover:text-accent max-[991px]:block md:px-10 lg:px-4">Beranda</a>
-                    <a href="/"
+                    <a href="#about"
                         class="px-5 py-2 text-white transition hover:text-accent max-[991px]:block md:px-10 lg:px-4">Tentang</a>
-                    <a href="/"
+                    <a href="#feat"
                         class="px-5 py-2 text-white transition hover:text-accent max-[991px]:block md:px-10 lg:px-4">Fitur Lengkap</a>
-                    <a href="/"
+                    <a href="#pricing"
                         class="px-5 py-2 text-white transition hover:text-accent max-[991px]:block md:px-10 lg:px-4">Harga</a>
-                    <a href="/"
-                        class="px-5 py-2 text-white transition hover:text-accent max-[991px]:block md:px-10 lg:px-4">Produk Lainnya</a>
                 </div>
                 <div
                     class="flex w-auto flex-none justify-start max-[991px]:mb-4 max-[991px]:ml-10 max-[991px]:mt-3 max-[767px]:ml-5 lg:w-50 lg:justify-end">

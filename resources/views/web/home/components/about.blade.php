@@ -1,4 +1,4 @@
-<section class="relative block text-white bg-primary">
+<section class="relative block text-white bg-primary" id="about">
     <div class="px-5 md:px-10">
         <div class="mx-auto w-full max-w-7xl">
             <div class="py-16 md:py-24 lg:py-32">

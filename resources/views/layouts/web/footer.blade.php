@@ -28,16 +28,16 @@
                     class="flex flex-row justify-between max-[991px]:items-center max-[767px]:flex-col max-[767px]:items-start max-[479px]:flex-col-reverse bg-primary">
                     <div
                         class="font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[479px]:mb-4 max-[991px]:py-1 text-center sm:text-center">
-                        <a href="#"
+                        <a href="#hero"
                             class="inline-block font-normal text-white transition hover:text-white sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pl-0 pr-6">Beranda</a>
-                        <a href="#"
+                        <a href="#about"
                             class="inline-block font-normal text-white transition hover:text-white sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pl-0 pr-6">Tentang</a>
-                        <a href="#"
+                        <a href="#feat"
                             class="inline-block font-normal text-white transition hover:text-white sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pl-0 pr-6">Fitur
                             Lengkap</a>
-                        <a href="#"
+                        <a href="#pricing"
                             class="inline-block font-normal text-white transition hover:text-white sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pl-0 pr-6">Harga</a>
-                        <a href="#"
+                        <a href="#faq"
                             class="inline-block font-normal text-white transition hover:text-white sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pl-0 pr-6">Bantuan</a>
                     </div>
                     <div class="max-[991px]:flex-none">

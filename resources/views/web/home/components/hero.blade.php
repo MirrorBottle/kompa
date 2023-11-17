@@ -1,4 +1,4 @@
-<header class="relative block bg-neutral h-screen">
+<header class="relative block bg-neutral h-screen" id="hero">
     <div class="px-5 md:px-3">
         <div class="mx-auto w-full max-w-7xl">
             <div class="py-16 md:py-24 lg:py-32">
@@ -8,7 +8,7 @@
                         <p class="text-xl text-[#e6e6e6]">Membuat pengelolaan data penting perusahaan jadi sederhana, cepat, dan efisien. Tanpa ribet!</p>
                     </div>
                     <div class="flex items-stretch justify-center">
-                        <a href="#"
+                        <a href="/register"
                             class="inline-block cursor-pointer border border-solid border-accent bg-accent px-8 py-4 text-center font-bold text-white transition hover:border-secondary hover:bg-secondary rounded-lg">Cobain, Deh!</a>
                     </div>
                 </div>
