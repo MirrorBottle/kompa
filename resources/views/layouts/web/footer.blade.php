@@ -5,14 +5,14 @@
                 <div class="flex flex-row justify-between max-[767px]:flex-col max-[767px]:items-start">
                     <div class="w-full max-w-[560px] max-[991px]:mr-4 max-[991px]:flex-initial max-[767px]:mr-0">
                         <h2 class="mb-4 font-extrabold text-white text-3xl md:text-5xl">
-                            Manajemen Risiko yang Gak <span class="text-accent">Ribet!</span>
+                            Pengelolaan data Perusahaan yang Gak <span class="text-accent">Ribet!</span>
                         </h2>
                     </div>
                     <div class="max-[991px]:ml-4 max-[991px]:flex-none max-[767px]:ml-0 max-[767px]:mt-8">
                         <div class="mb-4 flex max-w-[272px] items-start justify-start">
                             <p class="text-white">
                                 <i class="fa-solid fa-location-pin mr-2"></i>
-                                Jl. M.H. Thamrin No. 1, M. H. Thamrin, Thamrin, Jakarta Pusat
+                                Jl. M.H. Thamrin No. 1, M. H. Thamrin, Thamrin, Samarinda
                             </p>
                         </div>
                         <div class="mb-4 flex max-w-[272px] items-start justify-start">
