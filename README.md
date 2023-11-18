@@ -3,7 +3,6 @@
 #### Herni Suhartati 2109106001
 <br />
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -14,50 +13,97 @@
   <h3 align="center">Kompa</h3>
 
   <p align="center">
-    Sistem Pengelolaan Data Gaji Perusahaan
+    Sistem Pengelolaan Data Gaji Perusahaan 
     <br />
   </p>
 </div>
+
+
+
+<br />
+
 ## Role
-#### Company, Admin, Manajer, Finance, Pegawai
-## Fitur
-### Admin
-#### - CRUD Akun
-#### - CRUD Tim Pegawai
-#### - Lihat Data Diri
-#### - Master
-### Manajer
-#### - CRUD Slip Gaji Pegawai
-#### - CRUD Komisi Pegawai
-#### - Lihat Data Diri
-### Finance
-#### - Approval Final Slip Gaji
-#### - Pembukuan
-##### -- Pembukuan Gaji
-##### -- Pembukuan Sales
-#### - CRUD Persentase Komisi
-#### - Lihat Data Diri
-### Pegawai
-#### - CRUD Sales
-#### - Ubah Password dan Data Diri
-#### - Lihat Anggota Tim
-#### - Lihat Persentase Komisi
-#### - CRUD Pelanggan
-#### - Lihat Histori Gaji
-#### - Lihat Data Diri
-#### - Lihat Perusahaan
+<div >
+    <table>
+    <thead>
+        <tr>
+            <th>Role</th>
+            <th>Fitur</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Company</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>
+                <ul>
+                    <li>CRUD Akun</li>
+                    <li>CRUD Tim Pegawai</li>
+                    <li>Lihat Data Diri</li>
+                    <li>Master</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Manajer</td>
+            <td>
+                <ul>
+                    <li>CRUD Slip Gaji Pegawai</li>
+                    <li>CRUD Komisi Pegawai</li>
+                    <li>Lihat Data Diri</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Finance</td>
+            <td>
+                <ul>
+                    <li>Approval Final Slip Gaji</li>
+                    <li>Pembukuan Gaji</li>
+                    <li>Pembukuan Sales</li>
+                    <li>CRUD Persentase Komisi</li>
+                    <li>Lihat Data Diri</li>
+                </ul>
+            </td>
+        </tr>
+         <tr>
+            <td>pegawai</td>
+            <td>
+                <ul>
+                    <li>CRUD Sales</li>
+                    <li>Ubah Password dan Data Diri</li>
+                    <li>Lihat Anggota Tim</li>
+                    <li>CRUD Pelanggan</li>
+                    <li>Lihat Data Diri</li>
+                    <li>Lihat Perusahaan</li>
+                    <li>Lihat Persentase Komisi</li>
+                    <li>Lihat Histori Gaji</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
 ## Models
-#### Balance Book
-#### Balance Book Iten
-#### Commission rate
-#### Company
-#### Customer
-#### Salary
-#### Sales
-#### Team
-#### Team Member
-#### User
-#### User Commission rate
+<ul>
+    <li>Balance Book</li>
+    <li>Balance Book Item</li>
+    <li>Commission rate</li>
+    <li>Company</li>
+    <li>Customer</li>
+    <li>Salary</li>
+    <li>Sales</li>
+    <li>Team</li>
+    <li>Team Member</li>
+    <li>User</li>
+    <li>User Commission rate</li>
+</ul>
+
 
 <!-- ABOUT THE PROJECT -->
 ## Screenshot
@@ -82,8 +128,4 @@
 
 ### Register
 ![image](https://github.com/MirrorBottle/kompa/assets/92102981/a58aaa34-1843-42a6-b66c-3c41002d3702)
-
-
-
-
 
