@@ -3,7 +3,6 @@
 #### Herni Suhartati 2109106001
 <br />
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -19,8 +18,33 @@
   </p>
 </div>
 
+
+
 <br />
+
 ## Role
+<div align="center">
+    <table>
+    <thead>
+        <tr>
+            <th>Role</th>
+            <th>Fitur</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Company</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
 #### Company, Admin, Manajer, Finance, Pegawai
 <br />
 ## Fitur
