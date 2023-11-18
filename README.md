@@ -19,7 +19,6 @@
   </p>
 </div>
 
-<br />
 ## Role
 #### Company, Admin, Manajer, Finance, Pegawai
 
