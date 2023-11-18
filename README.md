@@ -13,7 +13,7 @@
   <h3 align="center">Kompa</h3>
 
   <p align="center">
-    Sistem Pengelolaan Data Gaji Perusahaan
+    Sistem Pengelolaan Data Gaji Perusahaan 
     <br />
   </p>
 </div>
@@ -90,17 +90,20 @@
 
 
 ## Models
-#### Balance Book
-#### Balance Book Iten
-#### Commission rate
-#### Company
-#### Customer
-#### Salary
-#### Sales
-#### Team
-#### Team Member
-#### User
-#### User Commission rate
+<ul>
+    <li>Balance Book</li>
+    <li>Balance Book Item</li>
+    <li>Commission rate</li>
+    <li>Company</li>
+    <li>Customer</li>
+    <li>Salary</li>
+    <li>Sales</li>
+    <li>Team</li>
+    <li>Team Member</li>
+    <li>User</li>
+    <li>User Commission rate</li>
+</ul>
+
 
 <!-- ABOUT THE PROJECT -->
 ## Screenshot
