@@ -168,9 +168,6 @@ Pada profil ubah Password pegawai dapat mengubah password nya
 Pada profil Tim pegawai dapat melihat daftar timnya
 ![image](https://github.com/MirrorBottle/kompa/assets/92102981/f0a14c99-751e-48cb-a945-039cdbd9cd26)
 
-
-
-
 # Admin
 ## Dashboard
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/0a55de42-4330-4294-9540-ebdbb99117f2)
@@ -214,4 +211,22 @@ Pada profil Tim pegawai dapat melihat daftar timnya
 
 ## Lihat Data Diri
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/a04de62a-3f51-4a07-88ec-6a02d034d891)
+
+# Manajer
+## Dashboard
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/f8802757-a19c-41c0-9537-6d5fd0239ae1)
+
+## Tim
+Pada page ini manajer bisa melihat daftar tim dan menentukan jumlah komisi dari setiap anggota timnya, serta dapat membuat slip gaji untuk pegawainya
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/a7d0bccf-93ae-4406-95c0-a7f0bd51f43c)
+
+## Penggajian
+Pada page ini manajer bisa melihat daftar gaji berserta statusnya dan dapat melakukan perubahan pada daftar gaji
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/613b4b38-34b7-4007-a7dd-4e12e6f04f91)
+
+## Control Panel Manajer
+Manajer dapat melihat profil, lihat data perusahaan, dan logout
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/a6733b83-7eff-469c-95cc-83ca7a65cb0e)
+
+
 
