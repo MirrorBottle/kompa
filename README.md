@@ -30,30 +30,30 @@
 
 ## Fitur
 ### Admin
-#### CRUD Akun
-#### CRUD Tim Pegawai
-#### Lihat Data Diri
-#### Master
+#### - CRUD Akun
+#### - CRUD Tim Pegawai
+#### - Lihat Data Diri
+#### - Master
 ### Manajer
-#### CRUD Slip Gaji Pegawai
-#### CRUD Komisi Pegawai
-#### Lihat Data Diri
+#### - CRUD Slip Gaji Pegawai
+#### - CRUD Komisi Pegawai
+#### - Lihat Data Diri
 ### Finance
-#### Approval Final Slip Gaji
-#### Pembukuan
-##### Pembukuan Gaji
-##### Pembukuan Sales
-#### CRUD Persentase Komisi
-#### Lihat Data Diri
+#### - Approval Final Slip Gaji
+#### - Pembukuan
+##### -- Pembukuan Gaji
+##### -- Pembukuan Sales
+#### - CRUD Persentase Komisi
+#### - Lihat Data Diri
 ### Pegawai
-#### CRUD Sales
-#### Ubah Password dan Data Diri
-#### Lihat Anggota Tim
-#### Lihat Persentase Komisi
-#### CRUD Pelanggan
-#### Lihat Histori Gaji
-#### Lihat Data Diri
-#### Lihat Perusahaan
+#### - CRUD Sales
+#### - Ubah Password dan Data Diri
+#### - Lihat Anggota Tim
+#### - Lihat Persentase Komisi
+#### - CRUD Pelanggan
+#### - Lihat Histori Gaji
+#### - Lihat Data Diri
+#### - Lihat Perusahaan
 
 ## Models
 #### Balance Book
