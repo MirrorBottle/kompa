@@ -22,7 +22,7 @@
 <br />
 ## Role
 #### Company, Admin, Manajer, Finance, Pegawai
-<br />
+
 ## Fitur
 ### Admin
 #### - CRUD Akun
@@ -49,7 +49,7 @@
 #### - Lihat Histori Gaji
 #### - Lihat Data Diri
 #### - Lihat Perusahaan
-<br />
+
 ## Models
 #### Balance Book
 #### Balance Book Iten
