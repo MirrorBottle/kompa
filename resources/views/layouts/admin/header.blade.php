@@ -7,12 +7,6 @@
                 'url' => 'admin/teams*',
                 'label' => 'Tim',
             ],
-            [
-                'route' => route('finance.commission-rates.index'),
-                'icon' => 'fa-solid fa-percent',
-                'url' => 'admin/commission-rates*',
-                'label' => 'Komisi',
-            ],
         ],
         'finance' => [
             [
