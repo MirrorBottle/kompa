@@ -80,7 +80,6 @@
                     <li>Lihat Perusahaan</li>
                     <li>Lihat Persentase Komisi</li>
                     <li>Lihat Histori Gaji</li>
-
                 </ul>
             </td>
         </tr>
