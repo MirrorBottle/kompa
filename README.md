@@ -1,5 +1,3 @@
-<br />
-
 ## Anggota
 #### Bayu Setyawan 2109106026
 #### Herni Suhartati 2109106001
@@ -21,9 +19,10 @@
   </p>
 </div>
 
+<br />
 ## Role
 #### Company, Admin, Manajer, Finance, Pegawai
-
+<br />
 ## Fitur
 ### Admin
 #### - CRUD Akun
@@ -50,7 +49,7 @@
 #### - Lihat Histori Gaji
 #### - Lihat Data Diri
 #### - Lihat Perusahaan
-
+<br />
 ## Models
 #### Balance Book
 #### Balance Book Iten
@@ -64,7 +63,7 @@
 #### User
 #### User Commission rate
 
-
+<br />
 <!-- ABOUT THE PROJECT -->
 ## Screenshot
 
