@@ -101,6 +101,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/salary/edit/action/{id}', [ManagerSalaryController::class, 'update'])->name("salary.update");
 
 
+
         // Route::get('/sales/create/action', 'SalaryController@store')->name('sales.store');
 
 

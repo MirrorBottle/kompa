@@ -1,6 +1,7 @@
 @extends('layouts.admin.index')
 @section('title', 'Daftar Penggajian')
 @section('content')
+    <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden p-2">
 
     <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden ">
         <div class="flex flex-row md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
@@ -10,18 +11,11 @@
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-4 py-3">Nama</th>
-                        <th scope="col" class="px-4 py-3">Nama Pegawai</th>
-                        <th scope="col" class="px-4 py-3">Gaji Pokok</th>
-                        <th scope="col" class="px-4 py-3">Rate Komisi</th>
-                        <th scope="col" class="px-4 py-3">Total Komisi</th>
-                        <th scope="col" class="px-4 py-3">Total Gaji</th>
                         <th scope="col" class="px-4 py-3">Status</th>
-                        <th scope="col" class="px-4 py-3">Catatan Manajer</th>
-                        <th scope="col" class="px-4 py-3">Catatan Finance</th>
-                        <th scope="col" class="px-4 py-3">Tanggal Mulai</th>
-                        <th scope="col" class="px-4 py-3">Tanggal Akhir</th>
-                        <th scope="col" class="px-4 py-3">Tanggal Disetujui</th>
+                        <th scope="col" class="px-4 py-3">Pegawai</th>
+                        <th scope="col" class="px-4 py-3">Tgl</th>
+                        <th scope="col" class="px-4 py-3">Komisi</th>
+                        <th scope="col" class="px-4 py-3">Total</th>
                         <th scope="col" class="px-4 py-3">
                             <span class="sr-only">Aksi</span>
                         </th>
@@ -31,40 +25,20 @@
                     @forelse ($salary as $salari)
                         <tr class="border-b dark:border-gray-700">
                             <th scope="row" class="px-4 py-3 font-medium text-gray-900">
-                                {{ $salari->name }}
+                                {!! $salari->status_name_badge !!}
                             </th>
                             <td class="px-4 py-3">
                                 {{ $salari->user->name }}
                             </td>
                             <td class="px-4 py-3">
-                                Rp.{{ $salari->base_salary }}
+                                {{ $salari->start_date->format('d/m') }} - {{ $salari->end_date->format('d/m/Y') }}
                             </td>
                             <td class="px-4 py-3">
-                                {{ $salari->user->commission->name }}
+                                {{ helperFormatCurrency($salari->commission_amount) }}
                             </td>
                             <td class="px-4 py-3">
-                                Rp.{{ $salari->commission_amount }}
-                            </td>
-                            <td class="px-4 py-3">
-                                Rp.{{ $salari->commission_amount + $salari->base_salary}}
-                            </td>
-                            <td class="px-4 py-3">
-                                {{ $salari->status_name }}
-                            </td>
-                            <td class="px-4 py-3">
-                                {{ $salari->manager_note }}
-                            </td>
-                            <td class="px-4 py-3">
-                                {{ $salari->finance_note }}
-                            </td>
-                            <td class="px-4 py-3">
-                                {{ $salari->start_date}}
-                            </td>
-                            <td class="px-4 py-3">
-                                {{ $salari->end_date }}
-                            </td>
-                            <td class="px-4 py-3">
-                                {{ $salari->approval_date }}
+                                {{ helperFormatCurrency($salari->total) }}
+
                             </td>
                             <td class="px-4 py-3 flex items-center justify-end">
                                 <button id="{{ $salari->id }}-button" data-dropdown-toggle="{{ $salari->id }}"
@@ -79,26 +53,26 @@
                                 </button>
                                 <div id="{{ $salari->id }}"
                                     class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="">
-                                        <li>
-                                            <a href="{{ route('manager.salary.edit', $salari->id) }}"
-                                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Ubah</a>
-                                        </li>
-                                    </ul>
+                                    <div class="py-1">
+                                        <a href="{{ route('manager.salary.edit', $salari->id) }}">
+                                        <button type="submit"
+                                            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
+                                            Detail
+                                        </button>
+                                    </a>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
                     @empty
                         <tr>
                             <th colspan="4">
-                                <div>
-                                    <img class="w-32 h-32 mx-auto"
-                                        src="https://res.cloudinary.com/daqsjyrgg/image/upload/v1690261234/di7tvpnzsesyo7vvsrq4.svg"
-                                        alt="image empty states">
-                                    <p class="text-gray-700 font-medium text-lg text-center">Datamu masih kosong
-                                        sepertinya...</p>
-                                    <p class="text-gray-500 text-center">Kamu bisa menambah datamu dengan mudah!</p>
-                                </div>
+                                <img class="w-32 h-32 mx-auto"
+                                    src="https://res.cloudinary.com/daqsjyrgg/image/upload/v1690261234/di7tvpnzsesyo7vvsrq4.svg"
+                                    alt="image empty states">
+                                <p class="text-gray-700 font-medium text-lg text-center">Datamu masih kosong sepertinya...
+                                </p>
+                                <p class="text-gray-500 text-center">Kamu bisa menambah datamu dengan mudah!</p>
                             </th>
                         </tr>
                     @endforelse
@@ -110,5 +84,4 @@
             {{ $salary->links() }}
         </nav>
     </div>
-
 @endsection
