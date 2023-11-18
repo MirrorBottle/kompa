@@ -23,7 +23,7 @@
 <br />
 
 ## Role
-<div align="center">
+<div >
     <table>
     <thead>
         <tr>
