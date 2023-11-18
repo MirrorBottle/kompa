@@ -8,16 +8,16 @@
   <h3 align="center">Kompa</h3>
 
   <p align="center">
-    Sistem Pelaporan dan Evaluasi HIRADC pada K3L Tambang
+    Sistem Pengelolaan Data Gaji Perusahaan
     <br />
   </p>
 </div>
 
 
-## Credentials
-Email: master@kompa.id
+## Anggota
+#### Bayu Setyawan 2109106026
+#### Herni Suhartati 2109106001
 
-Password: 123123
 
 <!-- ABOUT THE PROJECT -->
 ## Screenshot
