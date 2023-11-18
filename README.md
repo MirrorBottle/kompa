@@ -80,7 +80,8 @@
 
 
 ### Register
-![Uploading image.png…]()
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/a58aaa34-1843-42a6-b66c-3c41002d3702)
+
 
 
 
