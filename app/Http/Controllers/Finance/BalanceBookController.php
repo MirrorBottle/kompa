@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Finance;
 
 use App\Http\Controllers\Controller;
 use App\Models\BalanceBook;
+use App\Models\BalanceBookItem;
 use App\Models\Salary;
 use App\Models\Sales;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BalanceBookController extends Controller
 {
@@ -44,41 +46,49 @@ class BalanceBookController extends Controller
         ]);
         return redirect()->route('finance.balance-books.edit', $book->id)->with('success','Data pembukuan berhasil dibuat!');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(BalanceBook $balanceBook)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BalanceBook $balanceBook)
+    public function edit($id)
     {
-        $salaries = Salary::whereBetween("start_date", [$balanceBook->start_date, $balanceBook->end_date])
+        $book = BalanceBook::findOrFail($id);
+        $salaries = Salary::whereBetween("start_date", [$book->start_date, $book->end_date])
             ->where("status", Salary::STATUS_FINANCE_APPROVED)
             ->get();
-        $sales = Sales::whereBetween("sale_date", [$balanceBook->start_date, $balanceBook->end_date])
+        $sales = Sales::whereBetween("sale_date", [$book->start_date, $book->end_date])
             ->get();
-        return view("");
+
+        $sales_total = $sales->sum("sale_amount");
+        $salary_total = $salaries->sum(function($t){
+            return $t->base_salary + $t->commission_amount;
+        });
+        $expanse_total = $book->items->whereIn("type", [4])->sum("amount");
+        return view("finance.balance-books.edit", compact("salaries", "sales", "book", "sales_total", "salary_total", "expanse_total"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, BalanceBook $balanceBook)
+    public function update(Request $request, $id)
     {
-        //
+        $book = BalanceBook::findOrFail($id);
+        $request->merge([
+            'finalized_date' => date('Y-m-d')
+        ]);
+        $book->update($request->except([
+            '_method', '_token'
+        ]));
+        return redirect()->route('finance.balance-books.index')->with('success','Data pembukuan berhasil dibuat!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BalanceBook $balanceBook)
+    public function destroy($id)
     {
-        //
+        $book = BalanceBook::findOrFail($id);
+        $book->delete();
+        return redirect()->route('finance.balance-books.index')->with('success','Data pembukuan berhasil dihapus!');
+
     }
 }

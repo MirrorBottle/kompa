@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -61,6 +63,10 @@ class User extends Authenticatable
         return $this->belongsToMany(CommissionRate::class, 'user_commission_rates');
     }
 
+    public function sales() {
+        return $this->hasMany(Sales::class);
+    }
+
 
     // * MUTATOR
     public function getTeamAttribute()
@@ -116,5 +122,12 @@ class User extends Authenticatable
     public function getIsAdminAttribute()
     {
         return $this->role == self::ROLE_ADMIN;
+    }
+
+    public function getMonthlySalesTotalAttribute() {
+        return $this
+            ->sales()
+            ->whereBetween("sale_date", [Carbon::now()->startOfMonth()->toDateString(), Carbon::now()->endOfMonth()->toDateString()])
+            ->sum("sale_amount");
     }
 }

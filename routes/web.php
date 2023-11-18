@@ -81,8 +81,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
             Route::resource("salaries", FinanceSalaryController::class)->except(['edit', 'create']);
             Route::resource("balance-books", BalanceBookController::class);
-            Route::resource("balance-book-items", BalanceBookItemController::class)->except(['index', 'create']);
+            Route::resource("balance-book-items", BalanceBookItemController::class)->except(['index', 'create', 'show', 'destroy']);
+            Route::get("balance-book-items/delete/{id}", [BalanceBookItemController::class, 'destroy'])->name("balance-book-items.destroy");
             Route::get("balance-book-items/{balance_book_id}", [BalanceBookItemController::class, 'create'])->name("balance-book-items.create");
+
         });
         Route::resource("commission-rates", CommissionRateController::class);
     });

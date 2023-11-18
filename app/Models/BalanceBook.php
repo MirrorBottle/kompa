@@ -13,7 +13,8 @@ class BalanceBook extends Model
     public $guarded = [];
     public $casts = [
         'start_date' => 'date',
-        'end_date' => 'date'
+        'end_date' => 'date',
+        'finalized_date' => 'date'
     ];
     public static function boot()
     {
@@ -21,5 +22,13 @@ class BalanceBook extends Model
         static::addGlobalScope('currentCompany', function (Builder $builder) {
             $builder->where('company_id',  auth()->user()->company_id);
         });
+    }
+
+
+    public function items() {
+        return $this->hasMany(BalanceBookItem::class);
+    }
+    public function getProfitAttribute() {
+        return $this->sales_total - ($this->salary_total + $this->expanse_total);
     }
 }

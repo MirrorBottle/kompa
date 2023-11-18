@@ -19,11 +19,6 @@ class DashboardController extends Controller
             ->limit(3)
             ->get();
 
-        $sales = Sales::where("user_id", auth()->user()->id)
-            ->orderBy('id', 'desc')
-            ->limit(3)
-            ->get();
-
         $total_sales = [];
 
         foreach ($members as $member) {

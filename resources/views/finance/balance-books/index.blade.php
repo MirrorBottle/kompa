@@ -17,6 +17,7 @@
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
+                        <th scope="col" class="px-4 py-3">Finalisasi</th>
                         <th scope="col" class="px-4 py-3">Nama</th>
                         <th scope="col" class="px-4 py-3">Tgl.</th>
                         <th scope="col" class="px-4 py-3">Penjualan</th>
@@ -28,29 +29,35 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($books as $salary)
+                    @forelse ($books as $book)
                         <tr class="border-b dark:border-gray-700">
                             <th scope="row" class="px-4 py-3 font-medium text-gray-900">
-                                {!! $salary->status_name_badge !!}
+                                @if ($book->finalized_date)
+                                    <span class='bg-green-100 text-green-800 text-sm font-medium me-2 px-4 py-1 rounded'>
+                                        {{ $book->finalized_date->format('d/m/Y') }}
+                                    </span>
+                                @else
+                                    <span class='bg-red-100 text-red-800 text-sm font-medium me-2 px-4 py-1 rounded'>Belum
+                                        Final</span>
+                                @endif
+                            </th>
+                            <th scope="row" class="px-4 py-3 font-medium text-gray-900">
+                                {{ $book->name }}
                             </th>
                             <td class="px-4 py-3">
-                                {{ $salary->manager->name }}
+                                {{ $book->start_date->format('d/m/Y') }} ~ {{ $book->end_date->format('d/m/Y') }}
                             </td>
                             <td class="px-4 py-3">
-                                {{ $salary->user->name }}
+                                {{ helperFormatCurrency($book->sales_total) }}
                             </td>
                             <td class="px-4 py-3">
-                                {{ $salary->start_date->format('d/m') }} - {{ $salary->end_date->format('d/m/Y') }}
+                                {{ helperFormatCurrency($book->expanse_total + $book->salary_total) }}
                             </td>
                             <td class="px-4 py-3">
-                                {{ helperFormatCurrency($salary->commission_amount) }}
-                            </td>
-                            <td class="px-4 py-3">
-                                {{ helperFormatCurrency($salary->total) }}
-
+                                {{ helperFormatCurrency($book->profit) }}
                             </td>
                             <td class="px-4 py-3 flex items-center justify-end">
-                                <button id="{{ $salary->id }}-button" data-dropdown-toggle="{{ $salary->id }}"
+                                <button id="{{ $book->id }}-button" data-dropdown-toggle="{{ $book->id }}"
                                     data-dropdown-placement="top"
                                     class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
                                     type="button">
@@ -60,17 +67,21 @@
                                             d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                     </svg>
                                 </button>
-                                <div id="{{ $salary->id }}"
+                                <div id="{{ $book->id }}"
                                     class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                        aria-labelledby="{{ $salary->id }}-button">
+                                        aria-labelledby="{{ $book->id }}-button">
                                         <li>
-                                            <a href="{{ route('finance.salaries.show', $salary->id) }}"
-                                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Detail</a>
+                                            <a href="{{ route('finance.balance-books.edit', $book->id) }}"
+                                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+
+                                                {{ $book->finalized_date ? 'Detail' : 'Ubah' }}
+                                            </a>
                                         </li>
                                     </ul>
+                                    @if ($book->finalized_date == null)
                                     <div class="py-1">
-                                        <form action="{{ route('finance.salaries.destroy', $salary->id) }}" method="post">
+                                        <form action="{{ route('finance.balance-books.destroy', $book->id) }}" method="post">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit"
@@ -80,6 +91,7 @@
                                             </button>
                                         </form>
                                     </div>
+                                    @endif
                                 </div>
                             </td>
                         </tr>
