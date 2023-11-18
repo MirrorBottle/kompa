@@ -106,8 +106,10 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Screenshot
-### Web Home
+# Screenshot
+## Landing Page
+Page yang bertujuan sebagai wajah awal dari website Kompa, di sini menjelaskan tentang website Kompa
+
 ![image](https://github.com/MirrorBottle/kompa/assets/92102981/a741e1e8-442c-4bee-9a86-6660ba2938f0)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/92102981/c6f82a67-9fe4-4cc5-9dc6-83ebba55fb73)
@@ -122,10 +124,14 @@
 
 ![image](https://github.com/MirrorBottle/kompa/assets/92102981/c919ae26-7061-4fc3-88fd-ce53fcab628c)
 
-### Login
+## Login
+Page yang bertujuan sebagai login
 ![image](https://github.com/MirrorBottle/kompa/assets/92102981/c48642b8-cdf7-4af6-88a5-2872ad1289fc)
 
-
-### Register
+## Register
+Page yang bertujuan sebagai mendaftarkan akun perusahaan
 ![image](https://github.com/MirrorBottle/kompa/assets/92102981/a58aaa34-1843-42a6-b66c-3c41002d3702)
+
+# Pegawai
+
 
