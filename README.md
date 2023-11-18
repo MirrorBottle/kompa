@@ -22,11 +22,7 @@
 </div>
 
 ## Role
-#### Company
-#### Admin
-#### Manajer
-#### Finance
-#### Pegawai
+#### Company, Admin, Manajer, Finance, Pegawai
 
 ## Fitur
 ### Admin
