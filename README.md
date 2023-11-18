@@ -170,39 +170,48 @@ Pada profil Tim pegawai dapat melihat daftar timnya
 
 # Admin
 ## Dashboard
+Dashboard admin berisi tentang penggajian terbaru, penjualan per bulan dari semua tim, daftar penjualan dan juga performar penjualan per bulan dari setiap pegawai
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/0a55de42-4330-4294-9540-ebdbb99117f2)
 
 ## CRUD Akun
+Admin dapat melakukan CRUD pada akun di perusahaan yang dia daftarkan dan akun tersebut akan langsung terdaftar sebagai pengguna Kompa di bawah perusahaan yang dibuat admin
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/aaba9c9b-46f1-4088-8836-f1716bcab5f2)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/68527ce9-87f8-4fcb-a37c-19a8b1324624)
 
 ## CRUD Tim Pegawai
+Setiap pegawai akan di-assign ke tim yang akan memiliki seorang manager
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/63c76e92-72c6-4bc2-b97a-50503c666a13)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/c1514623-0d6d-470d-b6fb-90b04662578b)
 
 ## Ubah Data Perusahaan
+Pengguna dengan hak akses lain dapat melihat data perusahaan, tetapi hanya admin yang bisa mengubah informasi perusahaan
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/092e51dd-cb17-4997-9581-059bbaab3e39)
 
 # Finanace
 ## Dashboard
+Finance memiliki dashboard yang kurang lebih sama dengan admin
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/1ba8b99f-3ce7-411f-849a-1d22cb0d3350)
 
 ## Approval Slip Gaji
+Daftar gaji yang telah di-approve oleh manager akan dilempar ke Finance untuk approval akhir
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/fcbff152-12f3-471d-9c84-dc89949054a9)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/8bf82c78-45fc-4428-b46d-26698843223d)
 
 ## Pembukuan
+Pembukuan hanya bisa dilakukan oleh Finance yang dimana menandakan akhir bulan dan menjadi catatan keuangan per bulan mulai dari pengeluaran, penggajian, dan pendapatan
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/29422f6a-38a3-4e67-b3f2-8ef41f89e592)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/e6a270a6-d164-45bc-a795-a730ca56424f)
 
 ## Pengeluaran Pembukuan
+Di setiap pembukuan, Finance dapat membuat detail pengeluaran lain terlepas dari penggajian yang sudah diambil secara otomatis
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/f386d843-613e-4534-8829-7169aa3979db)
 
 ## Crud Persentase Komisi
+Persentase Komisi dibuat oleh Finance yang kemudian di-assign ke pegawai melalui manager masing-masing
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/12eb3b2e-e33d-498a-b715-f9e9e7f3547a)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/a798f78a-7736-4bea-b391-57f8494a2fdc)
