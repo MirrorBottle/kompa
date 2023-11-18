@@ -133,48 +133,85 @@ Page yang bertujuan sebagai mendaftarkan akun perusahaan
 ![image](https://github.com/MirrorBottle/kompa/assets/92102981/a58aaa34-1843-42a6-b66c-3c41002d3702)
 
 # Pegawai
+## Dashboard Pegawai
+Pada page ini berisikan dashboard dari akun pegawai
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/ad3f20e1-b717-419c-b414-7a6ded25e55d)
 
-### Admin
-#### Dashboard
+## Penjualan Pegawai
+Pada bagian ini pegawai dapat melakukan CRUD Penjualan
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/32e12aa6-1095-45e4-b372-2b13fc5424fa)
+
+## Pelanggan
+Pada bagian ini pegawai dapat melakukan CRUD Pelanggan
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/ae9d3790-deb5-4760-931a-5c6471335922)
+
+## Histori Gaji
+Pada page ini pegawai dapat melihat histori gaji yang pernah dia dapat
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/8449adab-038f-42df-ad29-011dd49272e7)
+
+## Control Panel Pegawai
+Pada control panel pegawai dapat melihat data diri, data perusahaan, dan logout
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/893d15fa-8297-4dc0-a0ce-615fc0e86df8)
+
+## Profil Data Diri
+Pada profil data diri pegawai dapat melihat data diri, data merubah nomor telepon dan nama pegawai
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/30b03ad9-e704-4efd-9046-70b05a627627)
+
+## Profil Komisi
+Pada profil komisi pegawai dapat melihat histori komisi dan daftar komisi yang didapatnya
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/be7f0e42-5bf5-493a-890f-5ab643016a65)
+
+## Profil Ubah Password
+Pada profil ubah Password pegawai dapat mengubah password nya
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/6ba3f129-a8c1-4dba-940c-f06798c3e98d)
+## Profil Tim
+Pada profil Tim pegawai dapat melihat daftar timnya
+![image](https://github.com/MirrorBottle/kompa/assets/92102981/f0a14c99-751e-48cb-a945-039cdbd9cd26)
+
+
+
+
+# Admin
+## Dashboard
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/0a55de42-4330-4294-9540-ebdbb99117f2)
 
-#### CRUD Akun
+## CRUD Akun
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/aaba9c9b-46f1-4088-8836-f1716bcab5f2)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/68527ce9-87f8-4fcb-a37c-19a8b1324624)
 
-#### CRUD Tim Pegawai
+## CRUD Tim Pegawai
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/63c76e92-72c6-4bc2-b97a-50503c666a13)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/c1514623-0d6d-470d-b6fb-90b04662578b)
 
-#### Ubah Data Perusahaan
+## Ubah Data Perusahaan
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/092e51dd-cb17-4997-9581-059bbaab3e39)
 
-### Finanace
-#### Dashboard
+# Finanace
+## Dashboard
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/1ba8b99f-3ce7-411f-849a-1d22cb0d3350)
 
-#### Approval Slip Gaji
+## Approval Slip Gaji
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/fcbff152-12f3-471d-9c84-dc89949054a9)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/8bf82c78-45fc-4428-b46d-26698843223d)
 
-#### Pembukuan
+## Pembukuan
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/29422f6a-38a3-4e67-b3f2-8ef41f89e592)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/e6a270a6-d164-45bc-a795-a730ca56424f)
 
-#### Pengeluaran Pembukuan
+## Pengeluaran Pembukuan
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/f386d843-613e-4534-8829-7169aa3979db)
 
-#### Crud Persentase Komisi
+## Crud Persentase Komisi
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/12eb3b2e-e33d-498a-b715-f9e9e7f3547a)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/a798f78a-7736-4bea-b391-57f8494a2fdc)
 
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/c3f26ff6-1a0c-45a3-bf3d-d78e6a360a72)
 
-#### Lihat Data Diri
+## Lihat Data Diri
 ![image](https://github.com/MirrorBottle/kompa/assets/49452045/a04de62a-3f51-4a07-88ec-6a02d034d891)
 
