@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
+use App\Http\Controllers\Manager\DashboardController as ManagerDashboardController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'dashboard', 'as' => 'admin.'], function() {
     Route::get('user', [UserDashboardController::class, 'dashboard']);
+    Route::get('manager', [ManagerDashboardController::class, 'dashboard']);
+
 })->withoutMiddleware("throttle:api");

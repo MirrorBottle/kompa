@@ -1,8 +1,6 @@
 @extends('layouts.admin.index')
 @section('title', 'Daftar Penggajian')
 @section('content')
-    <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden p-2">
-
     <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden ">
         <div class="flex flex-row md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
             <div class="w-full md:w-1/2"></div>
@@ -55,11 +53,11 @@
                                     class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                                     <div class="py-1">
                                         <a href="{{ route('manager.salary.edit', $salari->id) }}">
-                                        <button type="submit"
-                                            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
-                                            Detail
-                                        </button>
-                                    </a>
+                                            <button type="submit"
+                                                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
+                                                Detail
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                             </td>
